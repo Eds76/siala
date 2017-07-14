@@ -1,0 +1,644 @@
+-----------------------
+     IDENTITY
+-----------------------
+
+Name: pmwizranger
+Race: Темный эльф
+Gender: Женщина
+Age: 120
+Description: Страсть к приключениям недавно заставила вас пойти в человеческие земли, несмотря на совет семьи и своего здорового рассудка. вы хотите показать этим недолго живущим людям и грязным карликам из чего сделан настоящий эльф.
+Subrace: 
+Deity: 
+
+--------------------------
+     FINAL BUILD 
+--------------------------
+
+CLASSES:
+ - Волшебник (28), School: Универсальный
+ - Тусклый Мастер (10)
+ - Рейнджер (2)
+
+ABILITIES:
+  Str: 08
+  Dex: 10
+  Con: 16
+  Int: 20
+  Wis: 18
+  Cha: 08
+STATISTICS:
+  Hit Points: 599
+  AC: 32
+  Will Save: 34
+  Fort. Save: 29
+  Ref. Save: 17
+SKILLS:
+ - Концентрация
+(Concentration): 43
+ - Тренированность
+(Discipline): 43
+ - Лечение
+(Heal): 43
+ - Поиск
+(Search): 43
+ - Знание заклинаний
+(Spellcraft): 42
+ - Обнаружение
+(Spot): 43
+ - Оценка
+(Appraise): 10
+
+
+
+------------------------------
+     BUILD DETAILS 
+------------------------------
+
+STARTING ABILITIES:
+  Str: 08 (base 08+00)
+  Dex: 10 (base 10+00)
+  Con: 16 (base 06+10)
+  Int: 16 (base 11+05)
+  Wis: 12 (base 08+04)
+  Cha: 08 (base 08+00)
+
+------------------------------
+Level 1 - Волшебник
+Hitpoint dice: 4
+Skills:
+None
+Unused Skill pts: 16
+
+Feats:
+ - (CLASS) Владение простым оружием
+(Weapon Proficiency (simple))
+
+ - (RACE) Иммунитет ко сну
+(Immunity To Sleep)
+ - (RACE) Стойкость к зачарованию
+(Hardiness vs. Enchantments)
+ - (RACE) Предрасположенность к навыку (Тонкий слух)
+(Skill Affinity (Listen))
+ - (RACE) Предрасположенность к навыку (Поиск)
+(Skill Affinity (Search))
+ - (RACE) Предрасположенность к навыку (Обнаружение)
+(Skill Affinity (Spot))
+ - (RACE) Обостренные чувства
+(Keen Sense)
+ - (CLASS) Вызвать фамильяра
+(Summon Familiar)
+ - (RACE) Зрение при плохом освещении
+(Low-light Vision)
+ - (CLASS) Дух Сиалы
+ - (CLASS) Создать свиток
+(Scribe Scroll)
+
+ - Кипящая кровь
+(Blooded)
+
+
+
+
+------------------------------
+Level 2 - Волшебник
+Hitpoint dice: 4
+Skills:
+None
+Unused Skill pts: 20
+
+Feats:
+None
+
+
+------------------------------
+Level 3 - Волшебник
+Hitpoint dice: 4
+Skills:
+None
+Unused Skill pts: 25
+
+Feats:
+ - Бдительность
+(Alertness)
+
+
+
+
+------------------------------
+Level 4 - Волшебник
+Hitpoint dice: 2
+Ability: Int
+Skills:
+None
+Unused Skill pts: 30
+
+Feats:
+None
+
+
+------------------------------
+Level 5 - Волшебник
+Hitpoint dice: 2
+Skills:
+None
+Unused Skill pts: 32
+
+Feats:
+ - Удлиненное заклинание
+(Extend Spell)
+
+
+
+
+------------------------------
+Level 6 - Волшебник
+Hitpoint dice: 3
+Skills:
+None
+Unused Skill pts: 36
+
+Feats:
+ - Фокусировка на навыке (Обнаружение)
+(Skill Focus (Spot))
+
+
+
+------------------------------
+Level 7 - Волшебник
+Hitpoint dice: 4
+Skills:
+None
+Unused Skill pts: 40
+
+Feats:
+None
+
+
+------------------------------
+Level 8 - Волшебник
+Hitpoint dice: 4
+Ability: Int
+Skills:
+None
+Unused Skill pts: 45
+
+Feats:
+None
+
+
+------------------------------
+Level 9 - Волшебник
+Hitpoint dice: 4
+Skills:
+None
+Unused Skill pts: 50
+
+Feats:
+ - Ускоренное заклинание
+(Quicken Spell)
+
+
+
+
+------------------------------
+Level 10 - Волшебник
+Hitpoint dice: 2
+Skills:
+None
+Unused Skill pts: 56
+
+Feats:
+ - Усиленное заклинание
+(Empower Spell)
+
+
+
+
+------------------------------
+Level 11 - Тусклый Мастер
+Hitpoint dice: 3
+Skills:
+None
+Unused Skill pts: 60
+
+Feats:
+ - (CLASS) Костяная кожа
+(Bone Skin)
+
+
+
+
+------------------------------
+Level 12 - Тусклый Мастер
+Hitpoint dice: 6
+Ability: Int
+Skills:
+None
+Unused Skill pts: 66
+
+Feats:
+ - (CLASS) Поднять нежить
+(Animate Dead)
+
+ - Фокусировка на навыке (Тренированность)
+(Skill Focus (Discipline))
+
+
+
+------------------------------
+Level 13 - Тусклый Мастер
+Hitpoint dice: 5
+Skills:
+None
+Unused Skill pts: 70
+
+Feats:
+ - (CLASS) Инфразрение
+(Darkvision)
+
+
+
+------------------------------
+Level 14 - Тусклый Мастер
+Hitpoint dice: 4
+Skills:
+None
+Unused Skill pts: 75
+
+Feats:
+ - (CLASS) Призвать нежить
+(Summon Undead)
+
+
+
+
+------------------------------
+Level 15 - Тусклый Мастер
+Hitpoint dice: 5
+Skills:
+None
+Unused Skill pts: 80
+
+Feats:
+ - (CLASS) Энергия бессмертия
+(Deathless Vigor)
+
+ - Тихое заклинание
+(Silent Spell)
+
+
+
+
+------------------------------
+Level 16 - Тусклый Мастер
+Hitpoint dice: 6
+Ability: Int
+Skills:
+None
+Unused Skill pts: 86
+
+Feats:
+ - (CLASS) Прикосновение нежити I
+(Undead Graft I)
+
+
+
+
+------------------------------
+Level 17 - Тусклый Мастер
+Hitpoint dice: 6
+Skills:
+None
+Unused Skill pts: 93
+
+Feats:
+ - (CLASS) Твердый как кость
+(Tough as Bone)
+
+
+
+
+------------------------------
+Level 18 - Тусклый Мастер
+Hitpoint dice: 6
+Skills:
+None
+Unused Skill pts: 98
+
+Feats:
+ - (CLASS) Прикосновение нежити II
+(Undead Graft II)
+
+ - Неподвижное заклинание
+(Still Spell)
+
+
+
+
+------------------------------
+Level 19 - Тусклый Мастер
+Hitpoint dice: 4
+Skills:
+None
+Unused Skill pts: 104
+
+Feats:
+ - (CLASS) Призвать сильную нежить
+(Summon Greater Undead)
+
+
+
+
+------------------------------
+Level 20 - Тусклый Мастер
+Hitpoint dice: 5
+Ability: Wis
+Skills:
+None
+Unused Skill pts: 110
+
+Feats:
+ - (CLASS) Влияние бессмертия
+(Deathless Mastery)
+
+ - (CLASS) Прикосновение Мастера бессмертия
+(Deathless Master Touch)
+
+
+
+
+------------------------------
+Level 21 - Рейнджер
+Hitpoint dice: 10
+Skills:
+None
+
+Feats:
+ - Эпический Герой
+(Epic Character)
+ - (CLASS) Ношение брони (легкая)
+(Armor Proficiency (Light))
+
+ - (CLASS) Ношение брони (средняя) 
+(Armor Proficiency (Medium))
+
+ - (CLASS) Владение щитом
+(Shield Proficiency)
+
+ - (CLASS) Живучесть
+(Toughness)
+
+ - (CLASS) Не оставляющий следов шаг
+(Trackless Step)
+ - (CLASS) Оружие в обеих руках
+(Dual-Wield)
+ - Владение топорами
+ - Эпическая фокусировка на навыке (Обнаружение)
+(Epic Skill Focus (Spot))
+
+
+
+------------------------------
+Level 22 - Волшебник
+Hitpoint dice: 3
+Skills:
+None
+Unused Skill pts: 5
+
+Feats:
+None
+
+
+------------------------------
+Level 23 - Волшебник
+Hitpoint dice: 4
+Skills:
+None
+Unused Skill pts: 11
+
+Feats:
+None
+
+
+------------------------------
+Level 24 - Волшебник
+Hitpoint dice: 4
+Ability: Wis
+Skills:
+None
+Unused Skill pts: 17
+
+Feats:
+ - Эпическая фокус. на навыке (Тренированность)
+(Epic Skill Focus (Discipline))
+
+
+
+------------------------------
+Level 25 - Волшебник
+Hitpoint dice: 4
+Skills:
+None
+Unused Skill pts: 23
+
+Feats:
+None
+
+
+------------------------------
+Level 26 - Волшебник
+Hitpoint dice: 2
+Skills:
+None
+Unused Skill pts: 29
+
+Feats:
+ - Максимизированное заклинание
+(Maximize Spell)
+
+
+
+
+------------------------------
+Level 27 - Волшебник
+Hitpoint dice: 4
+Skills:
+None
+Unused Skill pts: 35
+
+Feats:
+ - Автоматически ускоренное заклинание I
+(Automatic Quicken Spell I)
+
+
+
+
+------------------------------
+Level 28 - Волшебник
+Hitpoint dice: 4
+Ability: Wis
+Skills:
+None
+Unused Skill pts: 41
+
+Feats:
+None
+
+
+------------------------------
+Level 29 - Волшебник
+Hitpoint dice: 3
+Skills:
+None
+Unused Skill pts: 47
+
+Feats:
+None
+
+
+------------------------------
+Level 30 - Волшебник
+Hitpoint dice: 2
+Skills:
+None
+Unused Skill pts: 53
+
+Feats:
+ - Автоматически ускоренное заклинание II
+(Automatic Quicken Spell II)
+
+
+
+------------------------------
+Level 31 - Волшебник
+Hitpoint dice: 3
+Skills:
+None
+Unused Skill pts: 59
+
+Feats:
+ - Автоматически ускоренное заклинание III
+(Automatic Quicken Spell III)
+
+
+
+------------------------------
+Level 32 - Волшебник
+Hitpoint dice: 4
+Ability: Wis
+Skills:
+None
+Unused Skill pts: 65
+
+Feats:
+ - (CLASS) Эпический Волшебник
+(Epic Wizard)
+
+
+
+------------------------------
+Level 33 - Волшебник
+Hitpoint dice: 2
+Skills:
+None
+Unused Skill pts: 71
+
+Feats:
+ - Эпическое заклинание: Эпическая защита
+(Epic Spell: Epic Warding)
+
+
+
+
+------------------------------
+Level 34 - Волшебник
+Hitpoint dice: 3
+Skills:
+None
+Unused Skill pts: 77
+
+Feats:
+ - Эпическое заклинание: Прах мумии
+(Epic Spell: Mummy Dust)
+
+
+
+
+------------------------------
+Level 35 - Волшебник
+Hitpoint dice: 4
+Skills:
+None
+Unused Skill pts: 83
+
+Feats:
+None
+
+
+------------------------------
+Level 36 - Волшебник
+Hitpoint dice: 2
+Ability: Wis
+Skills:
+None
+Unused Skill pts: 89
+
+Feats:
+ - Эпическое заклинание: Адский шар
+(Epic Spell: Hellball)
+
+
+
+
+------------------------------
+Level 37 - Волшебник
+Hitpoint dice: 4
+Skills:
+None
+Unused Skill pts: 95
+
+Feats:
+ - Эпическое заклинание: Большое разрушение
+(Epic Spell: Greater Ruin)
+
+
+
+
+------------------------------
+Level 38 - Волшебник
+Hitpoint dice: 4
+Skills:
+None
+Unused Skill pts: 101
+
+Feats:
+None
+
+
+------------------------------
+Level 39 - Волшебник
+Hitpoint dice: 2
+Skills:
+None
+Unused Skill pts: 107
+
+Feats:
+ - Эпическое заклинание: Дракон-рыцарь
+(Epic Spell: Dragon Knight)
+
+
+
+
+------------------------------
+Level 40 - Рейнджер
+Hitpoint dice: 10
+Ability: Wis
+Skills:
+None
+
+Feats:
+None
+
+
+
+Character sheet exported using NWN Tool version 2.0.1 - http://nwntool.coucou.net
