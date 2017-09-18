@@ -1,0 +1,624 @@
+-----------------------
+     IDENTITY
+-----------------------
+
+Name: Пар Шаф
+Race: Гоблин
+Gender: Мужчина
+Age: 88
+Description: Импла в печень - никто не вечен.
+Subrace: 
+Deity: Пар Шаф
+
+--------------------------
+     FINAL BUILD 
+--------------------------
+
+CLASSES:
+ - Священник (26), Domains: Плутовство, Путешествие
+ - Воин Богов (10)
+ - Теневой Танцор (4)
+
+ABILITIES:
+  Str: 06
+  Dex: 14
+  Con: 08
+  Int: 16
+  Wis: 36
+  Cha: 08
+STATISTICS:
+  Hit Points: 536
+  AC: 29
+  Will Save: 47
+  Fort. Save: 33
+  Ref. Save: 30
+SKILLS:
+ - Тренированность
+(Discipline): 43
+ - Лечение
+(Heal): 3
+ - Скрыться
+(Hide): 42
+ - Тихое передвижение
+(Move Silently): 42
+ - Знание заклинаний
+(Spellcraft): 30
+ - Обнаружение
+(Spot): 43
+ - Кувырок
+(Tumble): 5
+
+
+
+------------------------------
+     BUILD DETAILS 
+------------------------------
+
+STARTING ABILITIES:
+  Str: 06 (base 06+00)
+  Dex: 14 (base 10+04)
+  Con: 08 (base 08+00)
+  Int: 16 (base 08+08)
+  Wis: 18 (base 11+07)
+  Cha: 08 (base 08+00)
+
+------------------------------
+Level 1 - Священник
+Hitpoint dice: 8
+Skills:
+None
+Unused Skill pts: 16
+
+Feats:
+ - (CLASS) Ношение брони (тяжелая)
+(Armor Proficiency (Heavy))
+
+ - (CLASS) Ношение брони (легкая)
+(Armor Proficiency (Light))
+
+ - (CLASS) Ношение брони (средняя) 
+(Armor Proficiency (Medium))
+
+ - (CLASS) Владение щитом
+(Shield Proficiency)
+
+ - (CLASS) Владение простым оружием
+(Weapon Proficiency (simple))
+
+ - (RACE) Предрасположенность к навыку (Тонкий слух)
+(Skill Affinity (Listen))
+ - (RACE) Предрасположен. к навыку (Тихое передвижение)
+(Skill Affinity (Move Silently))
+ - (RACE) Удачливость
+(Lucky)
+ - (RACE) Бесстрашие
+(Fearless)
+ - (RACE) Хороший прицел
+(Good Aim)
+ - (CLASS) Изгнать нежить
+(Turn Undead)
+ - (RACE) Маленький рост
+(Small Stature)
+
+ - (CLASS) Дух Сиалы
+ - Кипящая кровь
+(Blooded)
+
+ - Силы домена Плутовство
+(Trickery Domain Powers)
+ - Силы домена Путешествие
+(Travel Domain Powers)
+
+
+
+------------------------------
+Level 2 - Священник
+Hitpoint dice: 8
+Skills:
+None
+Unused Skill pts: 20
+
+Feats:
+None
+
+
+------------------------------
+Level 3 - Священник
+Hitpoint dice: 8
+Skills:
+None
+Unused Skill pts: 24
+
+Feats:
+ - Увертливость
+(Dodge)
+
+
+
+
+------------------------------
+Level 4 - Священник
+Hitpoint dice: 8
+Ability: Wis
+Skills:
+None
+Unused Skill pts: 28
+
+Feats:
+None
+
+
+------------------------------
+Level 5 - Священник
+Hitpoint dice: 8
+Skills:
+None
+Unused Skill pts: 32
+
+Feats:
+None
+
+
+------------------------------
+Level 6 - Священник
+Hitpoint dice: 8
+Skills:
+None
+Unused Skill pts: 36
+
+Feats:
+ - Мобильность
+(Mobility)
+
+
+
+------------------------------
+Level 7 - Священник
+Hitpoint dice: 8
+Skills:
+None
+Unused Skill pts: 40
+
+Feats:
+None
+
+
+------------------------------
+Level 8 - Священник
+Hitpoint dice: 5
+Ability: Wis
+Skills:
+None
+Unused Skill pts: 45
+
+Feats:
+None
+
+
+------------------------------
+Level 9 - Священник
+Hitpoint dice: 5
+Skills:
+None
+Unused Skill pts: 50
+
+Feats:
+ - Фокусировка на оружии (дубина)
+(Weapon Focus (club))
+
+
+
+------------------------------
+Level 10 - Священник
+Hitpoint dice: 7
+Skills:
+None
+Unused Skill pts: 55
+
+Feats:
+None
+
+
+------------------------------
+Level 11 - Священник
+Hitpoint dice: 8
+Skills:
+None
+Unused Skill pts: 60
+
+Feats:
+None
+
+
+------------------------------
+Level 12 - Священник
+Hitpoint dice: 7
+Ability: Wis
+Skills:
+None
+Unused Skill pts: 65
+
+Feats:
+ - Фокусировка на Школе Магии (Разрушение)
+(Spell Focus (Evocation))
+
+
+
+------------------------------
+Level 13 - Священник
+Hitpoint dice: 5
+Skills:
+None
+Unused Skill pts: 70
+
+Feats:
+None
+
+
+------------------------------
+Level 14 - Священник
+Hitpoint dice: 6
+Skills:
+None
+Unused Skill pts: 68
+
+Feats:
+None
+
+
+------------------------------
+Level 15 - Священник
+Hitpoint dice: 4
+Skills:
+None
+Unused Skill pts: 73
+
+Feats:
+ - Фокусировка на навыке (Обнаружение)
+(Skill Focus (Spot))
+
+
+
+------------------------------
+Level 16 - Священник
+Hitpoint dice: 5
+Ability: Wis
+Skills:
+None
+Unused Skill pts: 78
+
+Feats:
+None
+
+
+------------------------------
+Level 17 - Священник
+Hitpoint dice: 7
+Skills:
+None
+Unused Skill pts: 80
+
+Feats:
+None
+
+
+------------------------------
+Level 18 - Священник
+Hitpoint dice: 4
+Skills:
+None
+Unused Skill pts: 85
+
+Feats:
+ - Ускоренное заклинание
+(Quicken Spell)
+
+
+
+
+------------------------------
+Level 19 - Священник
+Hitpoint dice: 4
+Skills:
+None
+Unused Skill pts: 90
+
+Feats:
+None
+
+
+------------------------------
+Level 20 - Священник
+Hitpoint dice: 4
+Ability: Wis
+Skills:
+None
+Unused Skill pts: 92
+
+Feats:
+None
+
+
+------------------------------
+Level 21 - Воин Богов
+Hitpoint dice: 10
+Skills:
+None
+Unused Skill pts: 49
+
+Feats:
+ - Эпический Герой
+(Epic Character)
+ - (CLASS) Живучесть
+(Toughness)
+
+ - (CLASS) Лечащая рука
+(Lay on Hands)
+ - Великая Мудрость I
+(Great Wisdom I)
+
+
+
+------------------------------
+Level 22 - Воин Богов
+Hitpoint dice: 7
+Skills:
+None
+Unused Skill pts: 54
+
+Feats:
+ - (CLASS) Святая защита
+(Sacred Defense)
+
+ - Великая Мудрость II
+(Great Wisdom II)
+
+
+
+------------------------------
+Level 23 - Воин Богов
+Hitpoint dice: 10
+Skills:
+None
+Unused Skill pts: 59
+
+Feats:
+ - (CLASS) Сразить Зло
+(Smite Evil)
+
+
+
+------------------------------
+Level 24 - Воин Богов
+Hitpoint dice: 10
+Ability: Wis
+Skills:
+None
+Unused Skill pts: 64
+
+Feats:
+ - Великая Мудрость III
+(Great Wisdom III)
+ - Великая Мудрость IV
+(Great Wisdom IV)
+
+
+
+------------------------------
+Level 25 - Воин Богов
+Hitpoint dice: 8
+Skills:
+None
+Unused Skill pts: 65
+
+Feats:
+ - (CLASS) Божественный гнев
+(Divine Wrath)
+
+
+
+
+------------------------------
+Level 26 - Воин Богов
+Hitpoint dice: 7
+Skills:
+None
+Unused Skill pts: 70
+
+Feats:
+ - Великая Мудрость V
+(Great Wisdom V)
+
+
+
+------------------------------
+Level 27 - Священник
+Hitpoint dice: 6
+Skills:
+None
+Unused Skill pts: 68
+
+Feats:
+ - (CLASS) Эпический Священник
+(Epic Cleric)
+ - Автоматически ускоренное заклинание I
+(Automatic Quicken Spell I)
+
+
+
+
+------------------------------
+Level 28 - Воин Богов
+Hitpoint dice: 9
+Ability: Wis
+Skills:
+None
+Unused Skill pts: 73
+
+Feats:
+None
+
+
+------------------------------
+Level 29 - Воин Богов
+Hitpoint dice: 10
+Skills:
+None
+Unused Skill pts: 74
+
+Feats:
+ - Автоматически ускоренное заклинание II
+(Automatic Quicken Spell II)
+
+
+
+------------------------------
+Level 30 - Воин Богов
+Hitpoint dice: 5
+Skills:
+None
+Unused Skill pts: 32
+
+Feats:
+ - Автоматически ускоренное заклинание III
+(Automatic Quicken Spell III)
+
+
+
+------------------------------
+Level 31 - Теневой Танцор
+Hitpoint dice: 4
+Skills:
+None
+
+Feats:
+None
+
+
+------------------------------
+Level 32 - Теневой Танцор
+Hitpoint dice: 7
+Ability: Wis
+Skills:
+None
+Unused Skill pts: 9
+
+Feats:
+ - (CLASS) Необыкновенная Увертливость I
+(Uncanny Dodge I)
+ - (CLASS) Инфразрение
+(Darkvision)
+
+
+
+------------------------------
+Level 33 - Теневой Танцор
+Hitpoint dice: 7
+Skills:
+None
+Unused Skill pts: 5
+
+Feats:
+ - (CLASS) Теневое ошеломление
+(Shadow Daze)
+ - (CLASS) Вызывать тень
+(Summon Shadow)
+ - Эпическая фокусировка на навыке (Обнаружение)
+(Epic Skill Focus (Spot))
+
+
+
+------------------------------
+Level 34 - Священник
+Hitpoint dice: 7
+Skills:
+None
+Unused Skill pts: 10
+
+Feats:
+None
+
+
+------------------------------
+Level 35 - Священник
+Hitpoint dice: 6
+Skills:
+None
+Unused Skill pts: 15
+
+Feats:
+ - Великая Мудрость VI
+(Great Wisdom VI)
+
+
+
+------------------------------
+Level 36 - Священник
+Hitpoint dice: 6
+Ability: Wis
+Skills:
+None
+Unused Skill pts: 20
+
+Feats:
+ - Большая Фокусир. на Школе Магии (Разрушение)
+(Greater Spell Focus (Evocation))
+
+
+
+------------------------------
+Level 37 - Священник
+Hitpoint dice: 7
+Skills:
+None
+Unused Skill pts: 25
+
+Feats:
+None
+
+
+------------------------------
+Level 38 - Священник
+Hitpoint dice: 8
+Skills:
+None
+Unused Skill pts: 30
+
+Feats:
+ - Эпическая Фокус. на Школе Магии (Разрушение)
+(Epic Spell Focus (Evocation))
+
+
+
+------------------------------
+Level 39 - Теневой Танцор
+Hitpoint dice: 5
+Skills:
+None
+Unused Skill pts: 18
+
+Feats:
+ - (CLASS) Невидимость на виду
+(Hide in Plain Sight)
+ - (CLASS) Теневой Обход
+(Shadow Evade)
+ - Великая Мудрость VII
+(Great Wisdom VII)
+
+
+
+------------------------------
+Level 40 - Воин Богов
+Hitpoint dice: 10
+Ability: Wis
+Skills:
+None
+
+Feats:
+ - Великая Мудрость VIII
+(Great Wisdom VIII)
+
+
+
+
+Character sheet exported using NWN Tool version 2.0.1 - http://nwntool.coucou.net
