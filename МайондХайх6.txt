@@ -1,0 +1,647 @@
+-----------------------
+     IDENTITY
+-----------------------
+
+Name: Майонд Хайх
+Race: Светлый эльф
+Gender: Женщина
+Age: 29
+Description: Лишь одно в моем кармане.
+Subrace: 
+Deity: Майонд Хайх
+
+--------------------------
+     FINAL BUILD 
+--------------------------
+
+CLASSES:
+ - Воин (4)
+ - Варвар (31)
+ - Мастер Оружия (5)
+
+ABILITIES:
+  Str: 28
+  Dex: 13
+  Con: 16
+  Int: 13
+  Wis: 08
+  Cha: 08
+STATISTICS:
+  Hit Points: 882
+  AC: 62
+  Will Save: 30
+  Fort. Save: 50
+  Ref. Save: 30
+SKILLS:
+ - Тренированность
+(Discipline): 43
+ - Лечение
+(Heal): 43
+ - Знание заклинаний
+(Spellcraft): 21
+ - Насмешка
+(Taunt): 19
+ - Кувырок
+(Tumble): 20
+ - Запугивание
+(Intimidate): 4
+
+
+
+------------------------------
+     BUILD DETAILS 
+------------------------------
+
+STARTING ABILITIES:
+  Str: 16 (base 08+08)
+  Dex: 13 (base 08+05)
+  Con: 16 (base 08+08)
+  Int: 13 (base 08+05)
+  Wis: 08 (base 08+00)
+  Cha: 08 (base 08+00)
+
+------------------------------
+Level 1 - Воин
+Hitpoint dice: 10
+Skills:
+None
+Unused Skill pts: 4
+
+Feats:
+ - (CLASS) Ношение брони (тяжелая)
+(Armor Proficiency (Heavy))
+
+ - (CLASS) Ношение брони (легкая)
+(Armor Proficiency (Light))
+
+ - (CLASS) Ношение брони (средняя) 
+(Armor Proficiency (Medium))
+
+ - (CLASS) Владение щитом
+(Shield Proficiency)
+
+ - (CLASS) Живучесть
+(Toughness)
+
+ - (CLASS) Владение простым оружием
+(Weapon Proficiency (simple))
+
+ - (RACE) Иммунитет ко сну
+(Immunity To Sleep)
+ - (RACE) Стойкость к зачарованию
+(Hardiness vs. Enchantments)
+ - (RACE) Частич. предрасполож. к навыку (Тонкий слух)
+(Partial Skill Affinity (Listen))
+ - (RACE) Частич. предрасположенность к навыку (Поиск)
+(Partial Skill Affinity (Search))
+ - (RACE) Частич. предрасположен. навыку (Обнаружение)
+(Partial Skill Affinity (Spot))
+ - (RACE) Зрение при плохом освещении
+(Low-light Vision)
+ - (CLASS) Дух Сиалы
+ - Увертливость
+(Dodge)
+
+ - Удача героев
+(Luck of Heroes)
+
+
+
+
+------------------------------
+Level 2 - Воин
+Hitpoint dice: 10
+Skills:
+None
+Unused Skill pts: 6
+
+Feats:
+ - Владение клинковым оружием
+
+
+
+------------------------------
+Level 3 - Воин
+Hitpoint dice: 10
+Skills:
+None
+Unused Skill pts: 8
+
+Feats:
+ - Фокусировка на оружии (рапира)
+(Weapon Focus (rapier))
+
+
+
+------------------------------
+Level 4 - Воин
+Hitpoint dice: 10
+Ability: Str
+Skills:
+None
+Unused Skill pts: 3
+
+Feats:
+ - Мобильность
+(Mobility)
+
+
+
+------------------------------
+Level 5 - Варвар
+Hitpoint dice: 12
+Skills:
+None
+Unused Skill pts: 2
+
+Feats:
+ - (CLASS) Быстрое передвижение Варвара
+(Barbarian Fast Movement)
+ - (CLASS) Ярость Варвара (1 раз в день)
+(Barbarian Rage (1x per day))
+
+
+
+------------------------------
+Level 6 - Варвар
+Hitpoint dice: 12
+Skills:
+None
+Unused Skill pts: 5
+
+Feats:
+ - (CLASS) Необыкновенная Увертливость I
+(Uncanny Dodge I)
+ - Атака с ходу
+(Spring Attack)
+
+
+
+
+------------------------------
+Level 7 - Варвар
+Hitpoint dice: 12
+Skills:
+None
+Unused Skill pts: 9
+
+Feats:
+None
+
+
+------------------------------
+Level 8 - Варвар
+Hitpoint dice: 12
+Ability: Str
+Skills:
+None
+Unused Skill pts: 13
+
+Feats:
+ - (CLASS) Ярость Варвара (2 раза в день)
+(Barbarian Rage (2x per day))
+
+
+
+------------------------------
+Level 9 - Варвар
+Hitpoint dice: 12
+Skills:
+None
+Unused Skill pts: 17
+
+Feats:
+ - (CLASS) Необыкновенная увертливость II
+(Uncanny Dodge II)
+ - Мастерство
+(Expertise)
+
+
+
+
+------------------------------
+Level 10 - Варвар
+Hitpoint dice: 12
+Skills:
+None
+Unused Skill pts: 17
+
+Feats:
+None
+
+
+------------------------------
+Level 11 - Варвар
+Hitpoint dice: 12
+Skills:
+None
+Unused Skill pts: 21
+
+Feats:
+None
+
+
+------------------------------
+Level 12 - Варвар
+Hitpoint dice: 12
+Ability: Str
+Skills:
+None
+Unused Skill pts: 25
+
+Feats:
+ - (CLASS) Ярость Варвара (3 раза в день)
+(Barbarian Rage (3x per day))
+ - Ураганная атака
+(Whirlwind Attack)
+
+
+
+
+------------------------------
+Level 13 - Мастер Оружия
+Hitpoint dice: 10
+Skills:
+None
+Unused Skill pts: 27
+
+Feats:
+ - (CLASS) Урон Ки
+(Ki Damage)
+
+ - Избранное оружие (рапира)
+(Weapon of Choice (rapier))
+
+
+
+------------------------------
+Level 14 - Мастер Оружия
+Hitpoint dice: 10
+Skills:
+None
+Unused Skill pts: 29
+
+Feats:
+None
+
+
+------------------------------
+Level 15 - Мастер Оружия
+Hitpoint dice: 10
+Skills:
+None
+Unused Skill pts: 26
+
+Feats:
+ - Бой вслепую
+(Blind-Fight)
+
+
+
+
+------------------------------
+Level 16 - Мастер Оружия
+Hitpoint dice: 10
+Ability: Str
+Skills:
+None
+Unused Skill pts: 27
+
+Feats:
+None
+
+
+------------------------------
+Level 17 - Мастер Оружия
+Hitpoint dice: 10
+Skills:
+None
+Unused Skill pts: 8
+
+Feats:
+ - (CLASS) Увеличенный множитель критического удара
+(Increased Multiplier)
+
+ - (CLASS) Превосходная фокусировка на оружии
+(Superior Weapon Focus)
+
+
+
+
+------------------------------
+Level 18 - Варвар
+Hitpoint dice: 12
+Skills:
+None
+Unused Skill pts: 11
+
+Feats:
+ - Улучшенный критический удар (рапира)
+(Improved Critical (rapier))
+
+
+
+------------------------------
+Level 19 - Варвар
+Hitpoint dice: 12
+Skills:
+None
+Unused Skill pts: 14
+
+Feats:
+ - (CLASS) Необыкновенная увертливость III
+(Uncanny Dodge III)
+
+
+
+------------------------------
+Level 20 - Варвар
+Hitpoint dice: 12
+Ability: Str
+Skills:
+None
+Unused Skill pts: 17
+
+Feats:
+ - (CLASS) Уменьшение повреждений 1
+(Damage Reduction 1)
+
+
+
+------------------------------
+Level 21 - Варвар
+Hitpoint dice: 12
+Skills:
+None
+Unused Skill pts: 20
+
+Feats:
+ - Эпический Герой
+(Epic Character)
+ - (CLASS) Ярость Варвара (4 раза в день)
+(Barbarian Rage (4x per day))
+ - Великая Сила I
+(Great Strength I)
+
+
+
+------------------------------
+Level 22 - Варвар
+Hitpoint dice: 12
+Skills:
+None
+Unused Skill pts: 7
+
+Feats:
+ - (CLASS) Необыкновенная увертливость IV
+(Uncanny Dodge IV)
+
+
+
+------------------------------
+Level 23 - Варвар
+Hitpoint dice: 12
+Skills:
+None
+Unused Skill pts: 10
+
+Feats:
+ - (CLASS) Уменьшение повреждений 2
+(Damage Reduction 2)
+
+
+
+------------------------------
+Level 24 - Варвар
+Hitpoint dice: 12
+Ability: Str
+Skills:
+None
+Unused Skill pts: 13
+
+Feats:
+ - (CLASS) Большая Ярость (4 раза в день)
+(Greater Rage (4x per day))
+ - Великая Сила II
+(Great Strength II)
+
+
+
+------------------------------
+Level 25 - Варвар
+Hitpoint dice: 12
+Skills:
+None
+Unused Skill pts: 16
+
+Feats:
+ - (CLASS) Необыкновенная увертливость V
+(Uncanny Dodge V)
+ - (CLASS) Большая Ярость (5 раза в день)
+(Greater Rage (5x per day))
+
+
+
+------------------------------
+Level 26 - Варвар
+Hitpoint dice: 12
+Skills:
+None
+Unused Skill pts: 19
+
+Feats:
+ - (CLASS) Уменьшение повреждений 3
+(Damage Reduction 3)
+
+
+
+------------------------------
+Level 27 - Варвар
+Hitpoint dice: 12
+Skills:
+None
+Unused Skill pts: 12
+
+Feats:
+ - Сбивание с ног
+(Knockdown)
+
+
+
+
+------------------------------
+Level 28 - Варвар
+Hitpoint dice: 12
+Ability: Str
+Skills:
+None
+Unused Skill pts: 15
+
+Feats:
+ - (CLASS) Необыкновенная увертливость VI+
+(Uncanny Dodge VI+)
+
+
+
+------------------------------
+Level 29 - Варвар
+Hitpoint dice: 12
+Skills:
+None
+Unused Skill pts: 18
+
+Feats:
+ - (CLASS) Большая Ярость
+(Greater Rage)
+ - (CLASS) Уменьшение повреждений 4
+(Damage Reduction 4)
+
+
+
+------------------------------
+Level 30 - Варвар
+Hitpoint dice: 12
+Skills:
+None
+Unused Skill pts: 21
+
+Feats:
+ - (CLASS) Эпический Варвар
+(Epic Barbarian)
+ - Громоподобная ярость
+(Thundering Rage)
+
+
+
+
+------------------------------
+Level 31 - Варвар
+Hitpoint dice: 12
+Skills:
+None
+Unused Skill pts: 25
+
+Feats:
+None
+
+
+------------------------------
+Level 32 - Варвар
+Hitpoint dice: 8
+Ability: Str
+Skills:
+None
+Unused Skill pts: 29
+
+Feats:
+ - (CLASS) Эпическое Уменьшение повреждений Варвара
+(Epic Barbarian Damage Reduction)
+
+
+
+
+------------------------------
+Level 33 - Варвар
+Hitpoint dice: 7
+Skills:
+None
+Unused Skill pts: 33
+
+Feats:
+ - Эпическая Стойкость
+(Epic Fortitude)
+
+ - Эпическая фокусировка на оружии (рапира)
+(Epic Weapon Focus (rapier))
+
+
+
+------------------------------
+Level 34 - Варвар
+Hitpoint dice: 7
+Skills:
+None
+Unused Skill pts: 37
+
+Feats:
+None
+
+
+------------------------------
+Level 35 - Варвар
+Hitpoint dice: 12
+Skills:
+None
+Unused Skill pts: 41
+
+Feats:
+None
+
+
+------------------------------
+Level 36 - Варвар
+Hitpoint dice: 11
+Ability: Str
+Skills:
+None
+Unused Skill pts: 46
+
+Feats:
+ - Улучшенное сбивание с ног
+(Improved Knockdown)
+
+
+
+
+------------------------------
+Level 37 - Варвар
+Hitpoint dice: 11
+Skills:
+None
+Unused Skill pts: 51
+
+Feats:
+ - Эпическая доблесть
+(Epic Prowess)
+
+
+
+
+------------------------------
+Level 38 - Варвар
+Hitpoint dice: 10
+Skills:
+None
+Unused Skill pts: 53
+
+Feats:
+None
+
+
+------------------------------
+Level 39 - Варвар
+Hitpoint dice: 12
+Skills:
+None
+Unused Skill pts: 57
+
+Feats:
+ - Бронированная кожа
+(Armor Skin)
+
+
+
+
+------------------------------
+Level 40 - Варвар
+Hitpoint dice: 10
+Ability: Str
+Skills:
+None
+
+Feats:
+None
+
+
+
+Character sheet exported using NWN Tool version 2.0.1 - http://nwntool.coucou.net
