@@ -1,0 +1,642 @@
+﻿-----------------------
+     IDENTITY
+-----------------------
+
+Name: dru shift chot Giner
+Race: Темный эльф
+Gender: Женщина
+Age: 120
+Description: Страсть к приключениям недавно заставила вас пойти в человеческие земли, несмотря на совет семьи и своего здорового рассудка. вы хотите показать этим недолго живущим людям и грязным карликам из чего сделан настоящий эльф.
+Subrace: 
+Deity: 
+
+--------------------------
+     FINAL BUILD 
+--------------------------
+
+CLASSES:
+ - Друид (13)
+ - Воин Богов (17)
+ - Оборотень (10)
+
+ABILITIES:
+  Str: 16
+  Dex: 10
+  Con: 10
+  Int: 12
+  Wis: 28
+  Cha: 14
+STATISTICS:
+  Hit Points: 562
+  AC: 38
+  Will Save: 55
+  Fort. Save: 61
+  Ref. Save: 43
+SKILLS:
+ - Тренированность
+(Discipline): 43
+ - Лечение
+(Heal): 43
+ - Поиск
+(Search): 5
+ - Знание заклинаний
+(Spellcraft): 42
+ - Обнаружение
+(Spot): 43
+
+
+
+------------------------------
+     BUILD DETAILS 
+------------------------------
+
+STARTING ABILITIES:
+  Str: 16 (base 08+08)
+  Dex: 10 (base 10+00)
+  Con: 10 (base 06+04)
+  Int: 12 (base 08+04)
+  Wis: 14 (base 11+03)
+  Cha: 14 (base 08+06)
+
+------------------------------
+Level 1 - Друид
+Hitpoint dice: 8
+Skills:
+None
+Unused Skill pts: 16
+
+Feats:
+ - (CLASS) Ношение брони (легкая)
+(Armor Proficiency (Light))
+
+ - (CLASS) Ношение брони (средняя) 
+(Armor Proficiency (Medium))
+
+ - (CLASS) Владение щитом
+(Shield Proficiency)
+
+ - (CLASS) Живучесть
+(Toughness)
+
+ - (CLASS) Владение простым оружием
+(Weapon Proficiency (simple))
+
+ - (CLASS) Природное чутье
+(Nature Sense)
+ - (CLASS) Животное-компаньон
+(Animal Companion)
+ - (RACE) Иммунитет ко сну
+(Immunity To Sleep)
+ - (RACE) Стойкость к зачарованию
+(Hardiness vs. Enchantments)
+ - (RACE) Предрасположенность к навыку (Тонкий слух)
+(Skill Affinity (Listen))
+ - (RACE) Предрасположенность к навыку (Поиск)
+(Skill Affinity (Search))
+ - (RACE) Предрасположенность к навыку (Обнаружение)
+(Skill Affinity (Spot))
+ - (RACE) Обостренные чувства
+(Keen Sense)
+ - (RACE) Зрение при плохом освещении
+(Low-light Vision)
+ - (CLASS) Дух Сиалы
+ - Кипящая кровь
+(Blooded)
+
+
+
+
+------------------------------
+Level 2 - Друид
+Hitpoint dice: 8
+Skills:
+None
+Unused Skill pts: 21
+
+Feats:
+ - (CLASS) Свободная ходьба по лесу
+(Woodland Stride)
+
+
+
+------------------------------
+Level 3 - Друид
+Hitpoint dice: 8
+Skills:
+None
+Unused Skill pts: 26
+
+Feats:
+ - (CLASS) Не оставляющий следов шаг
+(Trackless Step)
+ - Владение древковым оружием
+
+
+
+------------------------------
+Level 4 - Друид
+Hitpoint dice: 5
+Ability: Wis
+Skills:
+None
+Unused Skill pts: 31
+
+Feats:
+ - (CLASS) Сопротивление природным соблазнам
+(Resist Nature's Lure)
+
+
+
+------------------------------
+Level 5 - Друид
+Hitpoint dice: 5
+Skills:
+None
+Unused Skill pts: 36
+
+Feats:
+ - (CLASS) Дикая форма
+
+
+
+------------------------------
+Level 6 - Друид
+Hitpoint dice: 7
+Skills:
+None
+Unused Skill pts: 41
+
+Feats:
+ - (CLASS) Дикая Форма (2 раза в день)
+(Wild Shape (2x day))
+ - Фокусировка на оружии (коса)
+(Weapon Focus (scythe))
+
+
+
+------------------------------
+Level 7 - Друид
+Hitpoint dice: 6
+Skills:
+None
+Unused Skill pts: 46
+
+Feats:
+ - (CLASS) Дикая Форма (3 раза в день)
+(Wild Shape (3x day))
+
+
+
+------------------------------
+Level 8 - Друид
+Hitpoint dice: 6
+Ability: Wis
+Skills:
+None
+Unused Skill pts: 51
+
+Feats:
+None
+
+
+------------------------------
+Level 9 - Друид
+Hitpoint dice: 8
+Skills:
+None
+Unused Skill pts: 56
+
+Feats:
+ - (CLASS) Иммунитет к ядам
+(Venom Immunity)
+ - Бдительность
+(Alertness)
+
+
+
+
+------------------------------
+Level 10 - Друид
+Hitpoint dice: 6
+Skills:
+None
+Unused Skill pts: 61
+
+Feats:
+ - (CLASS) Дикая Форма (4 раза в день)
+(Wild Shape (4x day))
+
+
+
+------------------------------
+Level 11 - Воин Богов
+Hitpoint dice: 10
+Skills:
+None
+Unused Skill pts: 26
+
+Feats:
+ - (CLASS) Лечащая рука
+(Lay on Hands)
+
+
+
+------------------------------
+Level 12 - Воин Богов
+Hitpoint dice: 5
+Ability: Wis
+Skills:
+None
+Unused Skill pts: 29
+
+Feats:
+ - (CLASS) Святая защита
+(Sacred Defense)
+
+ - Улучшенный критический удар (коса)
+(Improved Critical (scythe))
+ - Фокусировка на навыке (Обнаружение)
+(Skill Focus (Spot))
+
+
+
+------------------------------
+Level 13 - Воин Богов
+Hitpoint dice: 8
+Skills:
+None
+Unused Skill pts: 32
+
+Feats:
+ - (CLASS) Сразить Зло
+(Smite Evil)
+
+
+
+------------------------------
+Level 14 - Воин Богов
+Hitpoint dice: 9
+Skills:
+None
+Unused Skill pts: 35
+
+Feats:
+ - Ношение брони (тяжелая)
+(Armor Proficiency (Heavy))
+
+
+
+
+------------------------------
+Level 15 - Воин Богов
+Hitpoint dice: 8
+Skills:
+None
+Unused Skill pts: 38
+
+Feats:
+ - (CLASS) Божественный гнев
+(Divine Wrath)
+
+ - Великая стойкость
+(Great Fortitude)
+
+
+
+------------------------------
+Level 16 - Воин Богов
+Hitpoint dice: 8
+Ability: Wis
+Skills:
+None
+Unused Skill pts: 41
+
+Feats:
+ - Сбивание с ног
+(Knockdown)
+
+
+
+
+------------------------------
+Level 17 - Воин Богов
+Hitpoint dice: 9
+Skills:
+None
+Unused Skill pts: 26
+
+Feats:
+None
+
+
+------------------------------
+Level 18 - Воин Богов
+Hitpoint dice: 6
+Skills:
+None
+Unused Skill pts: 29
+
+Feats:
+ - Владение оружием дальнего боя
+ - Фокусировка на навыке (Тренированность)
+(Skill Focus (Discipline))
+
+
+
+------------------------------
+Level 19 - Воин Богов
+Hitpoint dice: 5
+Skills:
+None
+Unused Skill pts: 26
+
+Feats:
+None
+
+
+------------------------------
+Level 20 - Воин Богов
+Hitpoint dice: 6
+Ability: Wis
+Skills:
+None
+Unused Skill pts: 26
+
+Feats:
+ - Бой вслепую
+(Blind-Fight)
+
+
+
+
+------------------------------
+Level 21 - Оборотень
+Hitpoint dice: 4
+Skills:
+None
+Unused Skill pts: 31
+
+Feats:
+ - Эпический Герой
+(Epic Character)
+ - (CLASS) Большая дикая форма I (форма змея)
+(Greater Wildshape I (wyrmling shape))
+ - Эпическая Стойкость
+(Epic Fortitude)
+
+
+
+
+------------------------------
+Level 22 - Оборотень
+Hitpoint dice: 7
+Skills:
+None
+Unused Skill pts: 36
+
+Feats:
+None
+
+
+------------------------------
+Level 23 - Оборотень
+Hitpoint dice: 4
+Skills:
+None
+Unused Skill pts: 41
+
+Feats:
+ - (CLASS) Большая дикая форма
+(Greater Wildshape II)
+
+
+
+
+------------------------------
+Level 24 - Оборотень
+Hitpoint dice: 6
+Ability: Wis
+Skills:
+None
+Unused Skill pts: 46
+
+Feats:
+ - (CLASS) Бесконечная большая дикая форма I
+(Infinite Greater Wildshape I)
+
+ - Эпическая фокусировка на навыке (Обнаружение)
+(Epic Skill Focus (Spot))
+
+
+
+------------------------------
+Level 25 - Оборотень
+Hitpoint dice: 4
+Skills:
+None
+Unused Skill pts: 51
+
+Feats:
+ - (CLASS) Большая дикая форма III
+(Greater Wildshape III)
+
+
+
+
+------------------------------
+Level 26 - Оборотень
+Hitpoint dice: 7
+Skills:
+None
+Unused Skill pts: 56
+
+Feats:
+None
+
+
+------------------------------
+Level 27 - Оборотень
+Hitpoint dice: 5
+Skills:
+None
+Unused Skill pts: 61
+
+Feats:
+ - (CLASS) Форма гуманоида
+(Humanoid Shape)
+
+ - (CLASS) Бесконечная большая дикая форма II
+(Infinite Greater Wildshape II)
+
+ - Эпическая фокус. на навыке (Тренированность)
+(Epic Skill Focus (Discipline))
+
+
+
+------------------------------
+Level 28 - Оборотень
+Hitpoint dice: 4
+Ability: Wis
+Skills:
+None
+Unused Skill pts: 66
+
+Feats:
+None
+
+
+------------------------------
+Level 29 - Оборотень
+Hitpoint dice: 7
+Skills:
+None
+Unused Skill pts: 71
+
+Feats:
+None
+
+
+------------------------------
+Level 30 - Оборотень
+Hitpoint dice: 7
+Skills:
+None
+Unused Skill pts: 76
+
+Feats:
+ - (CLASS) Большая дикая форма IV
+(Greater Wildshape IV)
+
+ - (CLASS) Бесконечная большая дикая форма III
+(Infinite Greater Wildshape III)
+
+ - Форма нежити
+(Undead Shape)
+
+
+
+
+------------------------------
+Level 31 - Воин Богов
+Hitpoint dice: 8
+Skills:
+None
+Unused Skill pts: 46
+
+Feats:
+ - (CLASS) Эпический Чемпион Торма
+(Epic Champion of Torm)
+
+
+
+------------------------------
+Level 32 - Воин Богов
+Hitpoint dice: 7
+Ability: Wis
+Skills:
+None
+Unused Skill pts: 46
+
+Feats:
+None
+
+
+------------------------------
+Level 33 - Воин Богов
+Hitpoint dice: 6
+Skills:
+None
+Unused Skill pts: 49
+
+Feats:
+ - Великая Мудрость I
+(Great Wisdom I)
+
+
+
+------------------------------
+Level 34 - Воин Богов
+Hitpoint dice: 8
+Skills:
+None
+Unused Skill pts: 52
+
+Feats:
+ - Великая Мудрость II
+(Great Wisdom II)
+
+
+
+------------------------------
+Level 35 - Воин Богов
+Hitpoint dice: 7
+Skills:
+None
+Unused Skill pts: 46
+
+Feats:
+None
+
+
+------------------------------
+Level 36 - Воин Богов
+Hitpoint dice: 7
+Ability: Wis
+Skills:
+None
+Unused Skill pts: 46
+
+Feats:
+ - Великая Мудрость III
+(Great Wisdom III)
+
+
+
+------------------------------
+Level 37 - Друид
+Hitpoint dice: 7
+Skills:
+None
+Unused Skill pts: 10
+
+Feats:
+None
+
+
+------------------------------
+Level 38 - Друид
+Hitpoint dice: 4
+Skills:
+None
+Unused Skill pts: 15
+
+Feats:
+None
+
+
+------------------------------
+Level 39 - Друид
+Hitpoint dice: 7
+Skills:
+None
+Unused Skill pts: 18
+
+Feats:
+ - Великая Мудрость IV
+(Great Wisdom IV)
+
+
+
+------------------------------
+Level 40 - Воин Богов
+Hitpoint dice: 5
+Ability: Wis
+Skills:
+None
+
+Feats:
+None
+
+
+
+Character sheet exported using NWN Tool version 2.0.1 - http://nwntool.coucou.net
