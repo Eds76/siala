@@ -1,0 +1,86 @@
+nJumpsPossible = 99000;
+        vector v1 = GetPosition(oPC);
+        vector v2 = GetPositionFromLocation(lDestination);
+
+        float facing1 = GetFacing(oPC);
+        float facing2 = GetFacingFromLocation(lDestination);
+
+        DebugPlayerMessage(oPC, "x1 " + FloatToString(v1.x));
+        DebugPlayerMessage(oPC, "y1 " + FloatToString(v1.y));
+        DebugPlayerMessage(oPC, "facing1 " + FloatToString(GetFacing(oPC)));
+        DebugPlayerMessage(oPC, "x2 " + FloatToString(v2.x));
+        DebugPlayerMessage(oPC, "y2 " + FloatToString(v2.y));
+        DebugPlayerMessage(oPC, "facing2 " + FloatToString(GetFacingFromLocation(lDestination)));
+
+
+        float dx = v2.x - v1.x;
+        float dy = v2.y - v1.y;
+        float pi = 3.14;
+		string GetCheck;
+		
+        //>,< check
+        if(dx > 0.0)
+        {
+            if (dy > 0.0)
+            {
+                facing2 = atan(dy/dx);
+				GetCheck = "dx>0 dy>0";
+            }
+            else if(dy < 0.0)
+            {
+                facing2 = atan(dy/dx)+ 2 * pi;
+			        	GetCheck = "dx>0 dy<0";
+            }
+            else if(dy == 0.0)
+            {
+                facing2 = 0.0;
+		        		GetCheck = "dx>0 dy=0";
+            }
+        } // end of dx>0 check
+        else if(dx < 0.0)
+        {
+            if(dy > 0.0)
+            {
+                facing2 = pi/2 - atan(dy/dx);
+		        		GetCheck = "dx<0 dy>0";
+            }
+            else if(dy < 0.0)
+            {
+                facing2 = atan(dy/dx)+pi;
+		        		GetCheck = "dx<0 dy<0";
+            }
+            else if(dy == 0.0)
+            {
+                facing2 = pi;
+		        		GetCheck = "dx<0 dy=0";
+            }
+
+        } // end of dx<0 check
+        //end <,> check
+
+        //zero check
+        else if(dx == 0.0)
+        {
+            if (dy > 0.0)
+            {
+                facing2 = pi/2;
+		        		GetCheck = "dx=0 dy>0";
+            }
+            else if(dy < 0.0)
+            {
+                facing2 = 3/4 * pi;
+		        		GetCheck = "dx=0 dy<0";
+            }
+            else if( dy == 0.0)
+            {
+                facing2 = facing1;
+		        		GetCheck = "dx=0 dy=0";
+            }
+        }
+        //end of zero check
+		lDestination = Location(GetArea(oPC), v2, facing2);
+		
+		DebugPlayerMessage(oPC, "facing1 " + FloatToString(GetFacing(oPC)));
+		DebugPlayerMessage(oPC, "facing2 " + FloatToString(GetFacingFromLocation(lDestination)));
+		DebugPlayerMessage(oPC, "atan " + FloatToString(atan(dy/dx)));
+		DebugPlayerMessage(oPC, "Check " + GetCheck));
