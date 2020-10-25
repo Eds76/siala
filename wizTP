@@ -24,17 +24,17 @@ nJumpsPossible = 99000;
             if (dy > 0.0)
             {
                 facing2 = atan(dy/dx);
-				GetCheck = "dx>0 dy>0";
+		GetCheck = "dx>0 dy>0";
             }
             else if(dy < 0.0)
             {
                 facing2 = atan(dy/dx)+ 2 * pi;
-			        	GetCheck = "dx>0 dy<0";
+		GetCheck = "dx>0 dy<0";
             }
             else if(dy == 0.0)
             {
                 facing2 = 0.0;
-		        		GetCheck = "dx>0 dy=0";
+		GetCheck = "dx>0 dy=0";
             }
         } // end of dx>0 check
         else if(dx < 0.0)
@@ -42,17 +42,17 @@ nJumpsPossible = 99000;
             if(dy > 0.0)
             {
                 facing2 = pi/2 - atan(dy/dx);
-		        		GetCheck = "dx<0 dy>0";
+		GetCheck = "dx<0 dy>0";
             }
             else if(dy < 0.0)
             {
                 facing2 = atan(dy/dx)+pi;
-		        		GetCheck = "dx<0 dy<0";
+		GetCheck = "dx<0 dy<0";
             }
             else if(dy == 0.0)
             {
                 facing2 = pi;
-		        		GetCheck = "dx<0 dy=0";
+		GetCheck = "dx<0 dy=0";
             }
 
         } // end of dx<0 check
@@ -64,17 +64,17 @@ nJumpsPossible = 99000;
             if (dy > 0.0)
             {
                 facing2 = pi/2;
-		        		GetCheck = "dx=0 dy>0";
+		GetCheck = "dx=0 dy>0";
             }
             else if(dy < 0.0)
             {
                 facing2 = 3/4 * pi;
-		        		GetCheck = "dx=0 dy<0";
+		GetCheck = "dx=0 dy<0";
             }
             else if( dy == 0.0)
             {
                 facing2 = facing1;
-		        		GetCheck = "dx=0 dy=0";
+		GetCheck = "dx=0 dy=0";
             }
         }
         //end of zero check
@@ -83,4 +83,4 @@ nJumpsPossible = 99000;
 		DebugPlayerMessage(oPC, "facing1 " + FloatToString(GetFacing(oPC)));
 		DebugPlayerMessage(oPC, "facing2 " + FloatToString(GetFacingFromLocation(lDestination)));
 		DebugPlayerMessage(oPC, "atan " + FloatToString(atan(dy/dx)));
-		DebugPlayerMessage(oPC, "Check " + GetCheck));
+		DebugPlayerMessage(oPC, "Check " + GetCheck);
