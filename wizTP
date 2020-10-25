@@ -16,7 +16,7 @@ nJumpsPossible = 99000;
         float dx = v2.x - v1.x;
         float dy = v2.y - v1.y;
         float pi = 3.14;
-		string GetCheck;
+	string GetCheck;
 		
         //>,< check
         if(dx > 0.0)
