@@ -78,6 +78,7 @@ nJumpsPossible = 99000;
             }
         }
         //end of zero check
+		facing2 = facing2 * 180/pi;
 		lDestination = Location(GetArea(oPC), v2, facing2);
 		
 		DebugPlayerMessage(oPC, "facing1 " + FloatToString(GetFacing(oPC)));
