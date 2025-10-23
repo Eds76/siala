@@ -216,8 +216,8 @@
       border-radius: 28px;
       overflow: hidden;
       border: 1px solid rgba(148, 199, 255, 0.28);
-      background: linear-gradient(135deg, rgba(8, 16, 38, 0.9), rgba(6, 13, 30, 0.95));
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+      background: linear-gradient(140deg, #f0f1f6, #d3d7e0);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.28);
       cursor: grab;
     }
     .map-viewport:active { cursor: grabbing; }
@@ -225,11 +225,11 @@
       content: "";
       position: absolute;
       inset: 0;
-      background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      background-image: linear-gradient(rgba(37, 54, 77, 0.08) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(37, 54, 77, 0.08) 1px, transparent 1px);
       background-size: 120px 120px;
       pointer-events: none;
-      opacity: 0.25;
+      opacity: 0.5;
     }
     .map-stage {
       position: absolute;
@@ -242,10 +242,10 @@
       inset: 0;
       background: radial-gradient(circle at 20% 30%, rgba(255, 190, 92, 0.12), transparent 55%),
                   radial-gradient(circle at 80% 20%, rgba(125, 206, 160, 0.12), transparent 55%),
-                  radial-gradient(circle at 50% 80%, rgba(120, 156, 255, 0.1), transparent 60%);
-      mix-blend-mode: screen;
+                  radial-gradient(circle at 50% 80%, rgba(120, 156, 255, 0.12), transparent 60%);
+      mix-blend-mode: multiply;
       pointer-events: none;
-      opacity: 0.55;
+      opacity: 0.4;
     }
     .map-regions,
     .map-connections,
@@ -418,85 +418,147 @@
     button.area.hidden { display: none; }
     button.area.search-dim { filter: saturate(45%) brightness(0.7); opacity: 0.45; }
     button.area.search-hit { box-shadow: 0 22px 48px rgba(0, 0, 0, 0.45), 0 0 32px rgba(255, 235, 140, 0.55); }
-    .legend-panel { display: flex; flex-direction: column; gap: 0.75rem; }
-    .legend-panel .panel-header { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
-    .legend-panel button {
-      appearance: none;
-      border: none;
-      background: rgba(255, 255, 255, 0.12);
-      color: rgba(255, 255, 255, 0.85);
-      border-radius: 999px;
-      padding: 0.45rem 0.85rem;
-      font-size: 0.75rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: background 0.2s ease, transform 0.2s ease;
-    }
-    .legend-panel button:hover { background: rgba(255, 255, 255, 0.18); transform: translateY(-1px); }
-    .legend-list {
+    .map-search {
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
-      margin: 0;
-      padding: 0;
-      list-style: none;
+      gap: 0.65rem;
+      padding: 1.15rem 1.5rem;
+      border-radius: 22px;
+      background: var(--panel-bg);
+      border: 1px solid var(--panel-border);
+      box-shadow: 0 18px 45px rgba(3, 8, 22, 0.3);
     }
-    .legend-item {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 0.65rem 1rem;
-      align-items: center;
-      padding: 0.85rem 1rem;
-      background: rgba(5, 12, 24, 0.55);
-      border: 1px solid rgba(167, 196, 255, 0.2);
-      border-radius: 18px;
-      cursor: pointer;
-      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s ease;
-      position: relative;
+    .map-search-title {
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #fefefe;
     }
-    .legend-item.active { box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25); background: rgba(12, 22, 39, 0.8); }
-    .legend-item:not(.active) { opacity: 0.55; }
-    .legend-item:hover { transform: translateY(-4px); }
-    .legend-item .legend-swatch {
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
-      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25), 0 8px 18px rgba(0, 0, 0, 0.28);
-      display: grid;
-      place-items: center;
-      font-size: 1.35rem;
+    .map-search label {
+      display: block;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.65);
     }
-    .legend-item strong { display: block; font-size: 0.95rem; color: #fefefe; margin-bottom: 0.15rem; }
-    .legend-item span.caption { display: block; font-size: 0.75rem; color: rgba(211, 222, 255, 0.72); letter-spacing: 0.05em; text-transform: uppercase; }
-    .legend-item small { grid-column: 1 / -1; font-size: 0.75rem; color: rgba(205, 222, 255, 0.65); line-height: 1.45; }
-    .search-panel label { display: block; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 0.45rem; }
     .search-box { display: flex; gap: 0.65rem; }
     .search-box input {
       flex: 1;
       border-radius: 12px;
-      border: 1px solid rgba(160, 200, 255, 0.3);
-      background: rgba(4, 12, 24, 0.65);
-      padding: 0.65rem 0.85rem;
+      border: 1px solid rgba(160, 200, 255, 0.4);
+      background: rgba(6, 16, 32, 0.6);
+      padding: 0.7rem 0.9rem;
       color: rgba(240, 247, 255, 0.95);
       font-size: 0.95rem;
       transition: border 0.2s ease, box-shadow 0.2s ease;
     }
-    .search-box input:focus { outline: none; border-color: rgba(255, 214, 140, 0.7); box-shadow: 0 0 0 3px rgba(255, 214, 140, 0.25); }
+    .search-box input:focus {
+      outline: none;
+      border-color: rgba(255, 214, 140, 0.75);
+      box-shadow: 0 0 0 3px rgba(255, 214, 140, 0.25);
+    }
     .search-box button {
       appearance: none;
       border: none;
       border-radius: 12px;
-      background: rgba(255, 255, 255, 0.12);
-      color: rgba(255, 255, 255, 0.8);
-      padding: 0.65rem 0.85rem;
+      background: rgba(255, 255, 255, 0.14);
+      color: rgba(255, 255, 255, 0.85);
+      padding: 0.7rem 0.95rem;
       font-size: 0.8rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       cursor: pointer;
+      transition: background 0.2s ease;
     }
-    .search-box button:hover { background: rgba(255, 255, 255, 0.18); }
-    .search-hint { font-size: 0.78rem; color: rgba(200, 215, 245, 0.65); margin: 0.65rem 0 0; line-height: 1.45; }
+    .search-box button:hover { background: rgba(255, 255, 255, 0.22); }
+    .search-hint {
+      font-size: 0.78rem;
+      color: rgba(200, 215, 245, 0.7);
+      margin: 0;
+      line-height: 1.45;
+    }
+    .help-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .help-panel h4 {
+      margin: 0;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.75);
+    }
+    .help-shortcuts {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 0.5rem;
+    }
+    .help-shortcuts li {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .help-shortcuts kbd {
+      padding: 0.15rem 0.45rem;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.1);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.85);
+    }
+    .help-legend {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 0.75rem;
+    }
+    .help-legend li {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.65rem 0.85rem;
+      align-items: center;
+      padding: 0.75rem 0.9rem;
+      background: rgba(5, 12, 24, 0.5);
+      border: 1px solid rgba(167, 196, 255, 0.18);
+      border-radius: 18px;
+    }
+    .help-legend .legend-swatch {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22), 0 6px 14px rgba(0, 0, 0, 0.24);
+      display: grid;
+      place-items: center;
+      font-size: 1.35rem;
+    }
+    .help-legend strong {
+      font-size: 0.95rem;
+      color: #fefefe;
+      display: block;
+    }
+    .help-legend span.legend-desc {
+      font-size: 0.8rem;
+      color: rgba(205, 222, 255, 0.72);
+      line-height: 1.45;
+      display: block;
+    }
+    .help-legend span.legend-count {
+      font-size: 0.72rem;
+      color: rgba(200, 215, 245, 0.6);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      display: block;
+      margin-top: 0.25rem;
+    }
     @keyframes shimmer {
       0% { transform: translate3d(-10%, -10%, 0) scale(1); opacity: 0.35; }
       50% { opacity: 0.6; }
@@ -532,13 +594,13 @@
     <header>
       <div class="accent-line"></div>
       <h1>Интерактивная карта мира Сиалы</h1>
-      <p>Исследуйте мир Сиалы, созданный по материалам оригинальной схемы. Выделяйте локации, фильтруйте их по типам биомов, приближайте и отдаляйте карту. Каждый квадрат сохранил свои координаты и расцветку, но теперь он оживает благодаря мягким подсветкам и отзывчивой анимации.</p>
+      <p>Исследуйте мир Сиалы, созданный по материалам оригинальной схемы. Выделяйте локации, изучайте условные обозначения биомов в справке, приближайте и отдаляйте карту. Каждый квадрат сохранил свои координаты и расцветку, но теперь он оживает благодаря мягким подсветкам и отзывчивой анимации.</p>
     </header>
     <main class="layout">
       <aside class="sidebar">
         <section class="panel" id="infoPanel" aria-live="polite">
           <h2 id="infoTitle">Выберите локацию</h2>
-          <p id="infoSubtitle">Наведите курсор на ячейку карты или воспользуйтесь поиском, чтобы увидеть подробности.</p>
+          <p id="infoSubtitle">Наведите курсор на ячейку карты или воспользуйтесь строкой поиска над картой.</p>
           <div class="info-meta">
             <div>
               <span class="label">Биом</span>
@@ -554,27 +616,32 @@
             </div>
           </div>
           <div class="info-description" id="infoDescription">
-            <p>Кликайте по любым ячейкам, чтобы фиксировать описание и подсветку выбранной области. Пункты фильтра в легенде позволяют подсветить конкретные биомы.</p>
+            <p>Кликайте по ячейкам или пользуйтесь строкой поиска над картой, чтобы фиксировать описание выбранной области. Условные обозначения и подсказки собраны в разделе «Справка».</p>
           </div>
         </section>
-        <section class="panel legend-panel" aria-label="Фильтр по биомам">
-          <div class="panel-header">
-            <h3>Биомы</h3>
-            <button type="button" id="legendReset">Показать все</button>
-          </div>
-          <ul class="legend-list" id="legendList"></ul>
+        <section class="panel help-panel">
+          <h3>Справка</h3>
+          <p>Используйте колесо мыши или кнопки управления для масштабирования, перетаскивайте карту, чтобы перемещаться по регионам. Кнопки «Связи» и «Регионы» позволяют временно скрыть вспомогательные слои.</p>
+          <ul class="help-shortcuts">
+            <li><kbd>ЛКМ</kbd> Перемещение и выбор ячейки</li>
+            <li><kbd>Колесо мыши</kbd> Масштабирование</li>
+            <li><kbd>Enter</kbd> Перейти к первой найденной локации</li>
+            <li><kbd>Esc</kbd> Очистить поиск и выделение</li>
+          </ul>
+          <h4>Условные обозначения</h4>
+          <ul class="help-legend" id="helpLegend" aria-label="Условные обозначения биомов"></ul>
         </section>
-        <section class="panel search-panel">
-          <h3>Поиск</h3>
+      </aside>
+      <section class="map-wrapper">
+        <div class="map-search" role="search">
+          <span class="map-search-title">Поиск по карте</span>
           <label for="searchInput">Название или код</label>
           <div class="search-box">
             <input type="search" id="searchInput" placeholder="Например, NN01 или Зачарованный лес" autocomplete="off" spellcheck="false">
             <button type="button" id="searchClear">Очистить</button>
           </div>
-          <p class="search-hint">Нажмите <kbd>Enter</kbd>, чтобы перейти к первой найденной ячейке. Клавиша <kbd>Esc</kbd> очищает поиск и снимает выделение.</p>
-        </section>
-      </aside>
-      <section class="map-wrapper">
+          <p class="search-hint">Нажмите <kbd>Enter</kbd>, чтобы перейти к первой найденной ячейке. Клавиша <kbd>Esc</kbd> очищает поиск и выделение.</p>
+        </div>
         <div class="map-toolbar">
           <button type="button" data-action="zoom-in">Приблизить</button>
           <button type="button" data-action="zoom-out">Отдалить</button>
@@ -7391,8 +7458,7 @@
       const infoCode = document.getElementById('infoCode');
       const infoCoords = document.getElementById('infoCoords');
       const infoDescription = document.getElementById('infoDescription');
-      const legendList = document.getElementById('legendList');
-      const legendReset = document.getElementById('legendReset');
+      const helpLegend = document.getElementById('helpLegend');
       const searchInput = document.getElementById('searchInput');
       const searchClear = document.getElementById('searchClear');
 
@@ -7531,7 +7597,6 @@
       });
 
       const areaElements = [];
-      const activeBiomes = new Set(biomeCounts.keys());
       let selectedIndex = null;
       updateConnectionVisibility();
 
@@ -7686,11 +7751,8 @@
 
       function updateConnectionVisibility() {
         mapConnections.classList.toggle('is-hidden', !connectionsEnabled);
-        connectionShapes.forEach(({ element, source, target }) => {
-          const visible = connectionsEnabled &&
-            activeBiomes.has(parsedData[source].biome) &&
-            activeBiomes.has(parsedData[target].biome);
-          element.classList.toggle('hidden', !visible);
+        connectionShapes.forEach(({ element }) => {
+          element.classList.toggle('hidden', !connectionsEnabled);
         });
       }
 
@@ -7701,11 +7763,11 @@
         }
         selectedIndex = null;
         infoTitle.textContent = 'Выберите локацию';
-        infoSubtitle.textContent = 'Наведите курсор на ячейку или воспользуйтесь поиском.';
+        infoSubtitle.textContent = 'Наведите курсор или воспользуйтесь строкой поиска над картой.';
         infoBiome.textContent = '—';
         infoCode.textContent = '—';
         infoCoords.textContent = '—';
-        infoDescription.innerHTML = '<p>Кликайте по ячейкам карты, чтобы увидеть подробности.</p>';
+        infoDescription.innerHTML = '<p>Кликайте по ячейкам или пользуйтесь строкой поиска над картой, чтобы увидеть подробности. Справка справа помогает вспомнить условные обозначения.</p>';
       }
 
       function selectArea(index) {
@@ -7734,7 +7796,6 @@
         const index = Number(el.dataset.index);
         const item = parsedData[index];
         el.addEventListener('mouseenter', (event) => {
-          if (!activeBiomes.has(item.biome)) return;
           toggleConnectionClass(index, 'hovered', true);
           showTooltip(item, event);
         });
@@ -7747,7 +7808,6 @@
           hideTooltip();
         });
         el.addEventListener('click', () => {
-          if (!activeBiomes.has(item.biome)) return;
           selectArea(index);
         });
         el.addEventListener('keydown', (event) => {
@@ -7758,96 +7818,29 @@
         });
       });
 
-      function updateVisibility() {
-        areaElements.forEach((el, index) => {
-          const biome = parsedData[index].biome;
-          const visible = activeBiomes.has(biome);
-          el.classList.toggle('hidden', !visible);
-        });
-        if (selectedIndex !== null && !activeBiomes.has(parsedData[selectedIndex].biome)) {
-          clearSelection();
-        }
-        updateConnectionVisibility();
-      }
-
-      function buildLegend() {
-        legendList.innerHTML = '';
-        const fragments = document.createDocumentFragment();
-        const seen = new Set();
+      function renderHelpLegend() {
+        if (!helpLegend) return;
+        helpLegend.innerHTML = '';
+        const fragment = document.createDocumentFragment();
         BIOME_ORDER.forEach(biome => {
           if (!biomeCounts.has(biome)) return;
-          seen.add(biome);
           const style = BIOME_STYLE[biome] || BIOME_STYLE['Неизвестный биом'];
           const item = document.createElement('li');
-          item.className = 'legend-item active';
-          item.dataset.biome = biome;
           item.innerHTML = `
             <div class="legend-swatch" style="background: linear-gradient(140deg, ${style.main}, ${style.accent});">${style.icon || ''}</div>
             <div>
               <strong>${biome}</strong>
-              <span class="caption">${biomeCounts.get(biome)} локаций</span>
+              <span class="legend-desc">${style.desc}</span>
+              <span class="legend-count">${biomeCounts.get(biome)} локаций</span>
             </div>
-            <small>${style.desc}</small>
           `;
-          item.addEventListener('click', () => {
-            if (activeBiomes.size === 1 && activeBiomes.has(biome)) {
-              activeBiomes.clear();
-              biomeCounts.forEach((_, key) => activeBiomes.add(key));
-              legendList.querySelectorAll('.legend-item').forEach(el => el.classList.add('active'));
-            } else if (activeBiomes.has(biome)) {
-              activeBiomes.delete(biome);
-              item.classList.remove('active');
-            } else {
-              activeBiomes.add(biome);
-              item.classList.add('active');
-            }
-            legendList.querySelectorAll('.legend-item').forEach(el => {
-              const key = el.dataset.biome;
-              el.classList.toggle('active', activeBiomes.has(key));
-            });
-            updateVisibility();
-          });
-          fragments.appendChild(item);
+          fragment.appendChild(item);
         });
-        biomeCounts.forEach((_, biome) => {
-          if (!seen.has(biome)) {
-            const style = BIOME_STYLE[biome] || BIOME_STYLE['Неизвестный биом'];
-            const item = document.createElement('li');
-            item.className = 'legend-item active';
-            item.dataset.biome = biome;
-            item.innerHTML = `
-              <div class="legend-swatch" style="background: linear-gradient(140deg, ${style.main}, ${style.accent});">${style.icon || ''}</div>
-              <div>
-                <strong>${biome}</strong>
-                <span class="caption">${biomeCounts.get(biome)} локаций</span>
-              </div>
-              <small>${style.desc}</small>
-            `;
-            item.addEventListener('click', () => {
-              if (activeBiomes.has(biome)) {
-                activeBiomes.delete(biome);
-                item.classList.remove('active');
-              } else {
-                activeBiomes.add(biome);
-                item.classList.add('active');
-              }
-              updateVisibility();
-            });
-            fragments.appendChild(item);
-          }
-        });
-        legendList.appendChild(fragments);
+        helpLegend.appendChild(fragment);
       }
 
-      legendReset.addEventListener('click', () => {
-        activeBiomes.clear();
-        biomeCounts.forEach((_, key) => activeBiomes.add(key));
-        legendList.querySelectorAll('.legend-item').forEach(el => el.classList.add('active'));
-        updateVisibility();
-      });
-
-      buildLegend();
-      updateVisibility();
+      renderHelpLegend();
+      updateConnectionVisibility();
 
       function updateSearchHighlights(query) {
         const normalised = query.trim().toLowerCase();
@@ -7907,7 +7900,28 @@
         userAdjusted: false
       };
 
+      function clampTranslation() {
+        const rect = viewport.getBoundingClientRect();
+        const scaledWidth = mapWidth * viewState.scale;
+        const scaledHeight = mapHeight * viewState.scale;
+
+        if (scaledWidth <= rect.width) {
+          viewState.translateX = (rect.width - scaledWidth) / 2;
+        } else {
+          const minX = rect.width - scaledWidth;
+          viewState.translateX = Math.min(0, Math.max(minX, viewState.translateX));
+        }
+
+        if (scaledHeight <= rect.height) {
+          viewState.translateY = (rect.height - scaledHeight) / 2;
+        } else {
+          const minY = rect.height - scaledHeight;
+          viewState.translateY = Math.min(0, Math.max(minY, viewState.translateY));
+        }
+      }
+
       function applyTransform() {
+        clampTranslation();
         mapStage.style.transform = `translate(${viewState.translateX}px, ${viewState.translateY}px) scale(${viewState.scale})`;
       }
 
