@@ -1,0 +1,1094 @@
+﻿Add-Type -AssemblyName PresentationCore,PresentationFramework,WindowsBase,system.windows.forms
+[xml]$xmlWPF = @"
+<Window x:Name="window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:savesNWN"
+		ResizeMode="NoResize"
+        Title="SaveThrow/BAB+AB/AC calculator by Kiryusha, 2023 Siala Edition" Height="570" Width="820">
+		<Grid x:Name="main">
+        <Rectangle HorizontalAlignment="Left" Height="84" Margin="12,319,0,0" Stroke="Black" VerticalAlignment="Top" Width="232" RenderTransformOrigin="0.5,0.5"/>
+        <Rectangle HorizontalAlignment="Left" Height="244" Margin="10,279,0,0" Stroke="Black" VerticalAlignment="Top" Width="780"/>
+        <Rectangle Height="170" Stroke="Black" Width="120" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="510,298,0,0"/>
+        <TextBlock TextWrapping="Wrap" Text="armor skin" Width="58" VerticalAlignment="Top" Margin="513,359,0,0" HorizontalAlignment="Left"/>
+        <CheckBox x:Name="chb_AC_AS" Content="" VerticalAlignment="Top" Margin="589,360,0,0" HorizontalAlignment="Left" />
+        <TextBox x:Name="tb_AC_MONK" TextWrapping="Wrap" Width="22" Text="0" VerticalAlignment="Top" Margin="582,303,0,0" HorizontalAlignment="Left"/>
+        <TextBlock TextWrapping="Wrap" Text="monk" Width="63" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top" Margin="513,305,0,0" HorizontalAlignment="Left" />
+        <TextBox x:Name="tb_AC_RDD" TextWrapping="Wrap" Width="22" Text="0" VerticalAlignment="Top" Margin="582,320,0,0" HorizontalAlignment="Left"/>
+        <TextBlock TextWrapping="Wrap" Text="rdd" Width="63" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top" Margin="513,322,0,0" HorizontalAlignment="Left" />
+        <TextBox x:Name="tb_AC_PM" TextWrapping="Wrap" Width="22" Text="0" VerticalAlignment="Top" Margin="582,337,0,0" HorizontalAlignment="Left"/>
+        <TextBlock TextWrapping="Wrap" Text="pm" Width="63" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top" Margin="513,339,0,0" HorizontalAlignment="Left" />
+        <TextBlock TextWrapping="Wrap" Text="expertise" Width="58" VerticalAlignment="Top" Margin="513,375,0,0" HorizontalAlignment="Left"/>
+        <CheckBox x:Name="chb_AC_EXP" Content="" VerticalAlignment="Top" Margin="589,375,0,0" HorizontalAlignment="Left" />
+        <TextBlock TextWrapping="Wrap" Text="imp expertise" Width="76" VerticalAlignment="Top" Margin="513,389,0,0" HorizontalAlignment="Left"/>
+        <CheckBox x:Name="chb_AC_iEXP" Content="" VerticalAlignment="Top" Margin="589,390,0,0" HorizontalAlignment="Left" />
+        <TextBox x:Name="tb_AC_thumble" TextWrapping="Wrap" Width="22" Text="0" VerticalAlignment="Top" Margin="582,410,0,0" HorizontalAlignment="Left"/>
+        <TextBlock TextWrapping="Wrap" Text="thumble" Width="63" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top" Margin="513,410,0,0" HorizontalAlignment="Left" />
+        <TextBox x:Name="tb_AC_OTHER_SUM" TextWrapping="Wrap" Width="22" Text="0" IsEnabled="False" VerticalAlignment="Top" Margin="514,445,0,0" HorizontalAlignment="Left"/>
+        <TextBlock TextWrapping="Wrap" Text="sum" Width="26" VerticalAlignment="Top" Margin="514,429,0,0" HorizontalAlignment="Left"/>
+        <TextBox x:Name="tb_AC_OTHER_SUM_ff" TextWrapping="Wrap" Width="22" Text="0" IsEnabled="False" VerticalAlignment="Top" Margin="541,445,0,0" HorizontalAlignment="Left"/>
+        <TextBlock TextWrapping="Wrap" Text="ff" Width="26" VerticalAlignment="Top" Margin="541,429,0,0" HorizontalAlignment="Left"/>
+        <TextBox x:Name="tb_AC_OTHER_SUM_ta" TextWrapping="Wrap" Width="22" Text="0" IsEnabled="False" VerticalAlignment="Top" Margin="568,445,0,0" HorizontalAlignment="Left"/>
+        <TextBlock TextWrapping="Wrap" Text="ta" Width="26" VerticalAlignment="Top" Margin="568,429,0,0" HorizontalAlignment="Left"/>
+        <TextBox x:Name="tb_AC_MONK_MOD" TextWrapping="Wrap" Width="21" Text="0" VerticalAlignment="Top" Margin="606,303,0,0" HorizontalAlignment="Left" IsEnabled="False"/>
+        <TextBox x:Name="tb_AC_RDD_MOD" TextWrapping="Wrap" Width="21" Text="0" VerticalAlignment="Top" Margin="606,320,0,0" HorizontalAlignment="Left" IsEnabled="False"/>
+        <TextBox x:Name="tb_AC_PM_MOD" TextWrapping="Wrap" Width="21" Text="0" VerticalAlignment="Top" Margin="606,337,0,0" HorizontalAlignment="Left" IsEnabled="False"/>
+        <TextBox x:Name="tb_AC_thumble_MOD" TextWrapping="Wrap" Width="21" Text="0" VerticalAlignment="Top" Margin="606,410,0,0" HorizontalAlignment="Left" IsEnabled="False"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="36" Margin="429,152,0,0" VerticalAlignment="Top" Width="122"/>
+        <Rectangle HorizontalAlignment="Left" Height="20" Margin="371,193,0,0" Stroke="Black" VerticalAlignment="Top" Width="180"/>
+        <Slider x:Name="sld_class1" HorizontalAlignment="Left" Margin="199,41,0,0" VerticalAlignment="Top" Width="201" Height="22" SmallChange="1" TickPlacement="BottomRight" AutoToolTipPlacement="BottomRight" IsEnabled="False" IsSnapToTickEnabled="True"/>
+        <ComboBox x:Name="cmb_class1" HorizontalAlignment="Left" Margin="30,41,0,0" VerticalAlignment="Top" Width="155"/>
+        <ComboBox x:Name="cmb_class2" HorizontalAlignment="Left" Margin="30,68,0,0" VerticalAlignment="Top" Width="155"/>
+        <Slider x:Name="sld_class2" HorizontalAlignment="Left" Margin="199,68,0,0" VerticalAlignment="Top" Width="201" Height="22" SmallChange="1" TickPlacement="BottomRight" AutoToolTipPlacement="BottomRight" IsEnabled="False" IsSnapToTickEnabled="True"/>
+        <ComboBox x:Name="cmb_class3" HorizontalAlignment="Left" Margin="30,95,0,0" VerticalAlignment="Top" Width="155"/>
+        <Slider x:Name="sld_class3" HorizontalAlignment="Left" Margin="199,95,0,0" VerticalAlignment="Top" Width="201" Height="22" SmallChange="1" TickPlacement="BottomRight" AutoToolTipPlacement="BottomRight" IsEnabled="False" IsSnapToTickEnabled="True"/>
+        <ComboBox x:Name="cmb_class4" HorizontalAlignment="Left" Margin="30,122,0,0" VerticalAlignment="Top" Width="155"/>
+        <Slider x:Name="sld_class4" HorizontalAlignment="Left" Margin="199,122,0,0" VerticalAlignment="Top" Width="201" Height="22" SmallChange="1" TickPlacement="BottomRight" AutoToolTipPlacement="BottomRight" IsEnabled="False" IsSnapToTickEnabled="True"/>
+        <TextBox x:Name="tb_lvlSum" HorizontalAlignment="Left" Margin="402,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="20" Text="0" IsEnabled="False"/>
+        <TextBox x:Name="tb_class1_f" HorizontalAlignment="Left" Margin="440,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" IsEnabled="False" Text="0"/>
+        <TextBox x:Name="tb_class1_r" HorizontalAlignment="Left" Margin="475,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" IsEnabled="False" Text="0"/>
+        <TextBox x:Name="tb_class1_w" HorizontalAlignment="Left" Margin="510,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" IsEnabled="False" Text="0"/>
+        <TextBox x:Name="tb_class2_f" HorizontalAlignment="Left" Margin="440,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" IsEnabled="False" Text="0"/>
+        <TextBox x:Name="tb_class2_r" HorizontalAlignment="Left" Margin="475,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" IsEnabled="False" Text="0"/>
+        <TextBox x:Name="tb_class2_w" HorizontalAlignment="Left" Margin="510,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" IsEnabled="False" Text="0"/>
+        <TextBox x:Name="tb_class3_f" HorizontalAlignment="Left" Margin="440,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" IsEnabled="False" Text="0"/>
+        <TextBox x:Name="tb_class3_r" HorizontalAlignment="Left" Margin="475,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" IsEnabled="False" Text="0"/>
+        <TextBox x:Name="tb_class3_w" HorizontalAlignment="Left" Margin="510,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" IsEnabled="False" Text="0"/>
+        <TextBox x:Name="tb_class4_f" HorizontalAlignment="Left" Margin="440,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" IsEnabled="False" Text="0"/>
+        <TextBox x:Name="tb_class4_r" HorizontalAlignment="Left" Margin="475,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" IsEnabled="False" Text="0"/>
+        <TextBox x:Name="tb_class4_w" HorizontalAlignment="Left" Margin="510,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" IsEnabled="False" Text="0"/>
+        <TextBox x:Name="tb_SUM_f" HorizontalAlignment="Left" Margin="440,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" IsEnabled="False" Text="0"/>
+        <TextBox x:Name="tb_SUM_r" HorizontalAlignment="Left" Margin="475,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" IsEnabled="False" Text="0"/>
+        <TextBox x:Name="tb_SUM_w" HorizontalAlignment="Left" Margin="510,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" IsEnabled="False" Text="0"/>
+        <TextBlock HorizontalAlignment="Left" Height="18" Margin="440,18,0,0" TextWrapping="Wrap" Text="fort" VerticalAlignment="Top" Width="30"/>
+        <TextBlock HorizontalAlignment="Left" Height="18" Margin="475,18,0,0" TextWrapping="Wrap" Text="ref" VerticalAlignment="Top" Width="30"/>
+        <TextBlock HorizontalAlignment="Left" Height="18" Margin="510,18,0,0" TextWrapping="Wrap" Text="will" VerticalAlignment="Top" Width="30"/>
+        <CheckBox x:Name="chb_gFort" Content="" HorizontalAlignment="Left" Margin="450,195,0,0" VerticalAlignment="Top" />
+        <CheckBox x:Name="chb_gRef" Content="" HorizontalAlignment="Left" Margin="485,195,0,0" VerticalAlignment="Top" />
+        <CheckBox x:Name="chb_gWill" Content="" HorizontalAlignment="Left" Margin="520,195,0,0" VerticalAlignment="Top" />
+        <CheckBox x:Name="chb_eFort" Content="" HorizontalAlignment="Left" Margin="450,220,0,0" VerticalAlignment="Top"  RenderTransformOrigin="0.417,2.819"/>
+        <CheckBox x:Name="chb_eRef" Content="" HorizontalAlignment="Left" Margin="485,220,0,0" VerticalAlignment="Top" />
+        <CheckBox x:Name="chb_eWill" Content="" HorizontalAlignment="Left" Margin="520,220,0,0" VerticalAlignment="Top" />
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="great feat" VerticalAlignment="Top" Margin="372,195,0,0" Width="60"/>
+        <Rectangle HorizontalAlignment="Left" Height="20" Margin="371,218,0,0" Stroke="Black" VerticalAlignment="Top" Width="180"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="epic feat" VerticalAlignment="Top" Margin="372,220,0,0" Width="60"/>
+        <Rectangle HorizontalAlignment="Left" Height="20" Margin="371,243,0,0" Stroke="Black" VerticalAlignment="Top" Width="180"/>
+        <TextBlock HorizontalAlignment="Left" Margin="372,245,0,0" TextWrapping="Wrap" Text="epic level save cap +10" VerticalAlignment="Top"/>
+        <CheckBox x:Name="chb_epicCAP" Content="" HorizontalAlignment="Left" Margin="520,246,0,0" VerticalAlignment="Top" />
+        <Rectangle HorizontalAlignment="Left" Height="70" Margin="199,193,0,0" Stroke="Black" VerticalAlignment="Top" Width="149"/>
+        <TextBox x:Name="tb_CON" HorizontalAlignment="Left" Margin="267,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="22" Text="0"/>
+        <TextBox x:Name="tb_DEX" HorizontalAlignment="Left" Margin="294,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="22" Text="0"/>
+        <TextBox x:Name="tb_WIS" HorizontalAlignment="Left" Margin="321,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="22" Text="0"/>
+        <TextBox x:Name="tb_modCON" HorizontalAlignment="Left" Margin="267,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="22" IsEnabled="False" Text="0"/>
+        <TextBox x:Name="tb_modDEX" HorizontalAlignment="Left" Margin="294,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="22" IsEnabled="False" Text="0"/>
+        <TextBox x:Name="tb_modWIS" HorizontalAlignment="Left" Margin="321,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="22" IsEnabled="False" Text="0"/>
+        <TextBlock HorizontalAlignment="Left" Margin="267,204,0,0" TextWrapping="Wrap" Text="con" VerticalAlignment="Top" Width="20"/>
+        <TextBlock HorizontalAlignment="Left" Margin="294,204,0,0" TextWrapping="Wrap" Text="dex" VerticalAlignment="Top" Width="20"/>
+        <TextBlock HorizontalAlignment="Left" Margin="321,204,0,0" TextWrapping="Wrap" Text="wis" VerticalAlignment="Top" Width="17"/>
+        <TextBlock HorizontalAlignment="Left" Margin="207,241,0,0" TextWrapping="Wrap" Text="mod" VerticalAlignment="Top" Width="31"/>
+        <TextBox x:Name="tb_Sld1" HorizontalAlignment="Left" Margin="402,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="20" IsEnabled="False"/>
+        <TextBox x:Name="tb_Sld2" HorizontalAlignment="Left" Margin="402,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="20" IsEnabled="False"/>
+        <TextBox x:Name="tb_Sld3" HorizontalAlignment="Left" Margin="402,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="20" IsEnabled="False"/>
+        <TextBox x:Name="tb_Sld4" HorizontalAlignment="Left" Margin="402,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="20" IsEnabled="False"/>
+        <Rectangle HorizontalAlignment="Left" Height="70" Margin="10,193,0,0" Stroke="Black" VerticalAlignment="Top" Width="184"/>
+        <TextBlock HorizontalAlignment="Left" Margin="154,200,0,0" TextWrapping="Wrap" Text="cha" VerticalAlignment="Top" Width="31"/>
+        <TextBox x:Name="tb_CHA" HorizontalAlignment="Left" Margin="155,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" Text="0"/>
+        <TextBox x:Name="tb_modCHA" HorizontalAlignment="Left" Margin="155,241,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" IsEnabled="False" Text="0"/>
+        <TextBlock HorizontalAlignment="Left" Margin="124,241,0,0" TextWrapping="Wrap" Text="mod" VerticalAlignment="Top" Width="31"/>
+        <TextBlock HorizontalAlignment="Left" Margin="13,243,0,0" TextWrapping="Wrap" Text="dark blessing" VerticalAlignment="Top" Width="75"/>
+        <TextBlock HorizontalAlignment="Left" Margin="13,222,0,0" TextWrapping="Wrap" Text="divine blessing" VerticalAlignment="Top" Width="84"/>
+        <CheckBox x:Name="chb_DARKBLS" Content="" HorizontalAlignment="Left" Margin="102,243,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.513,0.152" />
+        <CheckBox x:Name="chb_DIVINEBLS" Content="" HorizontalAlignment="Left" Margin="102,223,0,0" VerticalAlignment="Top" />
+        <TextBlock HorizontalAlignment="Left" Margin="201,172,0,0" TextWrapping="Wrap" Text="Strong soul" VerticalAlignment="Top" Width="84"/>
+        <CheckBox x:Name="chb_SS" Content="" HorizontalAlignment="Left" Margin="290,173,0,0" VerticalAlignment="Top" />
+        <TextBlock HorizontalAlignment="Left" Margin="85,172,0,0" TextWrapping="Wrap" Text="Luck of heroes" VerticalAlignment="Top" Width="84"/>
+        <CheckBox x:Name="chb_LOH" Content="" HorizontalAlignment="Left" Margin="174,173,0,0" VerticalAlignment="Top" />
+        <TextBlock HorizontalAlignment="Left" Margin="357,163,0,0" TextWrapping="Wrap" Text="uni+20" VerticalAlignment="Top" Width="40"/>
+        <CheckBox x:Name="chb_UNI20" Content="" HorizontalAlignment="Left" Margin="402,164,0,0" VerticalAlignment="Top" />
+        <Rectangle HorizontalAlignment="Left" Height="245" Margin="556,18,0,0" Stroke="Black" VerticalAlignment="Top" Width="234"/>
+        <TextBlock HorizontalAlignment="Left" Margin="563,9,0,0" TextWrapping="Wrap" Text="BAB+AB" VerticalAlignment="Top" Width="46" Foreground="Black" Background="White"/>
+        <TextBox x:Name="tb_STR" HorizontalAlignment="Left" Margin="240,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="22" Text="0"/>
+        <TextBox x:Name="tb_modSTR" HorizontalAlignment="Left" Margin="240,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="22" IsEnabled="False" Text="0"/>
+        <TextBlock HorizontalAlignment="Left" Margin="240,204,0,0" TextWrapping="Wrap" Text="str" VerticalAlignment="Top" Width="20"/>
+        <TextBox x:Name="tb_class1_BAB" HorizontalAlignment="Left" Margin="579,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" IsEnabled="False" Text="0"/>
+        <TextBox x:Name="tb_class2_BAB" HorizontalAlignment="Left" Margin="579,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" IsEnabled="False" Text="0"/>
+        <TextBox x:Name="tb_class3_BAB" HorizontalAlignment="Left" Margin="579,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" IsEnabled="False" Text="0"/>
+        <TextBox x:Name="tb_class4_BAB" HorizontalAlignment="Left" Margin="579,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" IsEnabled="False" Text="0"/>
+        <TextBox x:Name="tb_SUM_BAB" HorizontalAlignment="Left" Margin="579,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" IsEnabled="False" Text="0"/>
+        <TextBlock HorizontalAlignment="Left" Margin="620,46,0,0" TextWrapping="Wrap" Text="gnome/halfling" VerticalAlignment="Top" Width="88"/>
+        <CheckBox x:Name="chb_gnomeAB" Content="" HorizontalAlignment="Left" Margin="713,46,0,0" VerticalAlignment="Top" />
+        <TextBox x:Name="tb_SUM_BA" HorizontalAlignment="Left" Margin="614,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" IsEnabled="False" Text="0"/>
+        <TextBox x:Name="tb_SUM_Attacks" HorizontalAlignment="Left" Margin="563,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" IsEnabled="False" Text="0"/>
+        <TextBox x:Name="tb_SUM_Monk_Attacks" HorizontalAlignment="Left" Margin="563,239,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" IsEnabled="False" Text="0"/>
+        <TextBlock HorizontalAlignment="Left" Margin="620,65,0,0" TextWrapping="Wrap" Text="half-elf" VerticalAlignment="Top" Width="88"/>
+        <CheckBox x:Name="chb_halfelfAB" Content="" HorizontalAlignment="Left" Margin="674,65,0,0" VerticalAlignment="Top" />
+        <TextBlock HorizontalAlignment="Left" Margin="640,85,0,0" TextWrapping="Wrap" Text="weapon finesse" VerticalAlignment="Top" Width="88"/>
+        <CheckBox x:Name="chb_finesse" Content="" HorizontalAlignment="Left" Margin="620,86,0,0" VerticalAlignment="Top" />
+        <TextBlock HorizontalAlignment="Left" Margin="640,105,0,0" TextWrapping="Wrap" Text="zen archery" VerticalAlignment="Top" Width="88"/>
+        <CheckBox x:Name="chb_zen" Content="" HorizontalAlignment="Left" Margin="620,106,0,0" VerticalAlignment="Top" />
+        <TextBox x:Name="tb_WMlvl" HorizontalAlignment="Left" Margin="758,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="22" Text="0"/>
+        <TextBlock HorizontalAlignment="Left" Margin="738,208,0,0" TextWrapping="Wrap" Text="wm" VerticalAlignment="Top" Width="20"/>
+        <TextBox x:Name="tb_AAlvl" HorizontalAlignment="Left" Margin="759,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="22" Text="0"/>
+        <TextBlock HorizontalAlignment="Left" Margin="740,184,0,0" TextWrapping="Wrap" Text="aa" VerticalAlignment="Top" Width="20"/>
+        <TextBox x:Name="tb_BGlvl" HorizontalAlignment="Left" Margin="759,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="22" Text="0"/>
+        <TextBlock HorizontalAlignment="Left" Margin="740,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="20" Height="18"><Run Text="bg"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="640,125,0,0" TextWrapping="Wrap" Text="siala monk" VerticalAlignment="Top" Width="88"/>
+        <CheckBox x:Name="chb_SialaMonk" Content="" HorizontalAlignment="Left" Margin="620,126,0,0" VerticalAlignment="Top" />
+        <TextBlock HorizontalAlignment="Left" Margin="699,63,0,0" TextWrapping="Wrap" Text="sagra he" VerticalAlignment="Top" Width="59" RenderTransformOrigin="0.503,0.433"/>
+        <CheckBox x:Name="chb_SagraHalfElf" Content="" HorizontalAlignment="Left" Margin="763,65,0,0" VerticalAlignment="Top" />
+        <TextBlock HorizontalAlignment="Left" Margin="640,125,0,0" TextWrapping="Wrap" Text="siala monk" VerticalAlignment="Top" Width="88"/>
+        <TextBlock HorizontalAlignment="Left" Margin="579,148,0,0" TextWrapping="Wrap" Text="BAB" VerticalAlignment="Top" Width="22" RenderTransformOrigin="0.373,0.529"/>
+        <TextBlock HorizontalAlignment="Left" Margin="614,148,0,0" TextWrapping="Wrap" Text="AB" VerticalAlignment="Top" Width="22" RenderTransformOrigin="0.373,0.529"/>
+        <TextBox x:Name="tb_free20cap" HorizontalAlignment="Left" Margin="649,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" IsEnabled="False" Text="20"/>
+        <TextBlock HorizontalAlignment="Left" Margin="649,148,0,0" TextWrapping="Wrap" Text="free +20cap" VerticalAlignment="Top" Width="65" RenderTransformOrigin="0.373,0.529"/>
+        <TextBlock HorizontalAlignment="Left" Margin="674,187,0,0" TextWrapping="Wrap" Text="focus" VerticalAlignment="Top" Width="40"/>
+        <CheckBox x:Name="chb_focus" Content="" HorizontalAlignment="Left" Margin="654,188,0,0" VerticalAlignment="Top" />
+        <TextBlock HorizontalAlignment="Left" Margin="674,203,0,0" TextWrapping="Wrap" Text="epic focus" VerticalAlignment="Top" Width="54"/>
+        <CheckBox x:Name="chb_Efocus" Content="" HorizontalAlignment="Left" Margin="654,204,0,0" VerticalAlignment="Top" />
+        <TextBlock HorizontalAlignment="Left" Margin="674,220,0,0" TextWrapping="Wrap" Text="prowess" VerticalAlignment="Top" Width="54"/>
+        <CheckBox x:Name="chb_prowess" Content="" HorizontalAlignment="Left" Margin="654,221,0,0" VerticalAlignment="Top" />
+        <TextBox x:Name="tb_abBuff" HorizontalAlignment="Left" Margin="698,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" Text="0"/>
+        <TextBlock HorizontalAlignment="Left" Margin="684,165,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" Width="15" RenderTransformOrigin="0.373,0.529"/>
+        <TextBlock HorizontalAlignment="Left" Margin="563,218,0,0" TextWrapping="Wrap" Text="monk ab" VerticalAlignment="Top" Width="54"/>
+        <TextBox x:Name="tb_AC_ARMOR_b" HorizontalAlignment="Left" Margin="165,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="22" Text="0"/>
+        <TextBox x:Name="tb_AC_ARMOR_p" HorizontalAlignment="Left" Margin="192,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="22" Text="0"/>
+        <TextBox x:Name="tb_AC_ARMOR_s" HorizontalAlignment="Left" Margin="219,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="22" Text="0"/>
+        <TextBox x:Name="tb_AC_ARMOR_BASE" HorizontalAlignment="Left" Margin="138,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="22" Text="5"/>
+        <TextBlock HorizontalAlignment="Left" Margin="14,302,0,0" TextWrapping="Wrap" Text="armor\bracer" VerticalAlignment="Top" Width="85" RenderTransformOrigin="0.5,0.5" />
+        <TextBlock HorizontalAlignment="Left" Margin="165,284,0,0" TextWrapping="Wrap" Text="b" VerticalAlignment="Top" Width="20"/>
+        <TextBlock HorizontalAlignment="Left" Margin="192,284,0,0" TextWrapping="Wrap" Text="p" VerticalAlignment="Top" Width="20"/>
+        <TextBlock HorizontalAlignment="Left" Margin="219,284,0,0" TextWrapping="Wrap" Text="s" VerticalAlignment="Top" Width="17"/>
+        <TextBlock HorizontalAlignment="Left" Margin="14,327,0,0" TextWrapping="Wrap" Text="shield" VerticalAlignment="Top" Width="85" RenderTransformOrigin="0.5,0.5" />
+        <TextBox x:Name="tb_AC_SHIELD_b" HorizontalAlignment="Left" Margin="165,326,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="22" Text="0"/>
+        <TextBox x:Name="tb_AC_SHIELD_p" HorizontalAlignment="Left" Margin="192,326,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="22" Text="0"/>
+        <TextBox x:Name="tb_AC_SHIELD_s" HorizontalAlignment="Left" Margin="219,326,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="22" Text="0"/>
+        <TextBox x:Name="tb_AC_SHIELD_BASE" HorizontalAlignment="Left" Margin="138,326,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="22" Text="0"/>
+        <ComboBox x:Name="cmb_AC_armor_base" HorizontalAlignment="Left" Margin="94,297,0,0" VerticalAlignment="Top" Width="35" RenderTransformOrigin="-0.347,-0.159" Height="21"/>
+        <ComboBox x:Name="cmb_AC_shield_base" HorizontalAlignment="Left" Margin="94,321,0,0" VerticalAlignment="Top" Width="35" RenderTransformOrigin="-0.347,-0.159" Height="22"/>
+        <TextBlock HorizontalAlignment="Left" Margin="14,410,0,0" TextWrapping="Wrap" Text="natural (amulet)" VerticalAlignment="Top" Width="85" RenderTransformOrigin="0.5,0.5" />
+        <TextBox x:Name="tb_AC_NATURAL_b" HorizontalAlignment="Left" Margin="165,409,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="22" Text="0"/>
+        <TextBox x:Name="tb_AC_NATURAL_p" HorizontalAlignment="Left" Margin="192,409,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="22" Text="0"/>
+        <TextBox x:Name="tb_AC_NATURAL_s" HorizontalAlignment="Left" Margin="219,409,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="22" Text="0"/>
+        <TextBox x:Name="tb_AC_NATURAL_BASE" HorizontalAlignment="Left" Margin="138,409,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="22" Text="5"/>
+        <TextBlock HorizontalAlignment="Left" Margin="14,428,0,0" TextWrapping="Wrap" Text="deflect (other)" VerticalAlignment="Top" Width="85" RenderTransformOrigin="0.5,0.5" />
+        <TextBox x:Name="tb_AC_DEFLECT_b" HorizontalAlignment="Left" Margin="165,427,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="22" Text="0"/>
+        <TextBox x:Name="tb_AC_DEFLECT_p" HorizontalAlignment="Left" Margin="192,427,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="22" Text="0"/>
+        <TextBox x:Name="tb_AC_DEFLECT_s" HorizontalAlignment="Left" Margin="219,427,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="22" Text="0"/>
+        <TextBox x:Name="tb_AC_DEFLECT_BASE" HorizontalAlignment="Left" Margin="138,427,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="22" Text="5"/>
+        <TextBlock HorizontalAlignment="Left" Margin="14,446,0,0" TextWrapping="Wrap" Text="dodge (boots)" VerticalAlignment="Top" Width="85" RenderTransformOrigin="0.5,0.5" />
+        <TextBox x:Name="tb_AC_DODGE_b" HorizontalAlignment="Left" Margin="165,445,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="22" Text="0"/>
+        <TextBox x:Name="tb_AC_DODGE_p" HorizontalAlignment="Left" Margin="192,445,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="22" Text="0"/>
+        <TextBox x:Name="tb_AC_DODGE_s" HorizontalAlignment="Left" Margin="219,445,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="22" Text="0"/>
+        <TextBox x:Name="tb_AC_DODGE_BASE" HorizontalAlignment="Left" Margin="138,445,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="22" Text="5"/>
+        <TextBlock HorizontalAlignment="Left" Margin="22,271,0,0" TextWrapping="Wrap" Text="ARMOR CLASS" VerticalAlignment="Top" Width="80" Foreground="Black" Background="White"/>
+        <Rectangle Height="120" Stroke="Black" Width="257" VerticalAlignment="Top" Margin="246,298,0,0" HorizontalAlignment="Left"/>
+        <TextBlock TextWrapping="Wrap" Text="additional dodge" Width="92" Foreground="Black" Background="White" VerticalAlignment="Top" Margin="274,289,0,0" HorizontalAlignment="Left"/>
+        <TextBlock TextWrapping="Wrap" Text="epic mage armor (5)" Width="109" VerticalAlignment="Top" Margin="251,306,0,0" HorizontalAlignment="Left"/>
+        <CheckBox x:Name="chb_EMA" Content="" VerticalAlignment="Top" Margin="366,307,0,0" HorizontalAlignment="Left" />
+        <TextBlock TextWrapping="Wrap" Text="divine shield (CHA)" Width="111" VerticalAlignment="Top" Margin="251,321,0,0" HorizontalAlignment="Left"/>
+        <CheckBox x:Name="chb_DSH" Content="" VerticalAlignment="Top" Margin="366,322,0,0" HorizontalAlignment="Left" />
+        <TextBlock TextWrapping="Wrap" Text="defensive stance (4)" Width="106" VerticalAlignment="Top" Margin="251,336,0,0" HorizontalAlignment="Left"/>
+        <CheckBox x:Name="chb_DS" Content="" VerticalAlignment="Top" Margin="366,337,0,0" HorizontalAlignment="Left" />
+        <TextBlock TextWrapping="Wrap" Text="mage armor (1)" Width="99" VerticalAlignment="Top" Margin="251,351,0,0" HorizontalAlignment="Left"/>
+        <CheckBox x:Name="chb_MA" Content="" VerticalAlignment="Top" Margin="366,352,0,0" HorizontalAlignment="Left" />
+        <TextBlock TextWrapping="Wrap" Width="85" RenderTransformOrigin="0.5,0.5" Height="16" VerticalAlignment="Top" Margin="385,304,0,0" HorizontalAlignment="Left" ><Run Text="bard (song)"/><LineBreak/><Run/></TextBlock>
+        <TextBox x:Name="tb_AC_BARDSONG" TextWrapping="Wrap" Width="22" Text="0" VerticalAlignment="Top" Margin="458,304,0,0" HorizontalAlignment="Left"/>
+        <TextBlock TextWrapping="Wrap" Width="85" RenderTransformOrigin="0.5,0.5" Height="16" Text="shd (evade)" VerticalAlignment="Top" Margin="385,325,0,0" HorizontalAlignment="Left" />
+        <TextBox x:Name="tb_AC_SHADOWEVADE" TextWrapping="Wrap" Width="22" Text="0" VerticalAlignment="Top" Margin="458,325,0,0" HorizontalAlignment="Left"/>
+        <TextBox x:Name="tb_AC_DODGE_SUM_b" TextWrapping="Wrap" Width="22" Text="0" IsEnabled="False" VerticalAlignment="Top" Margin="393,392,0,0" HorizontalAlignment="Left"/>
+        <TextBox x:Name="tb_AC_DODGE_SUM_p" TextWrapping="Wrap" Width="22" Text="0" IsEnabled="False" VerticalAlignment="Top" Margin="420,392,0,0" HorizontalAlignment="Left"/>
+        <TextBox x:Name="tb_AC_DODGE_SUM_s" TextWrapping="Wrap" Width="22" Text="0" IsEnabled="False" VerticalAlignment="Top" Margin="447,392,0,0" HorizontalAlignment="Left"/>
+        <TextBox x:Name="tb_AC_DODGE_SUM_BASE" TextWrapping="Wrap" Width="22" Text="5" IsEnabled="False" VerticalAlignment="Top" Margin="366,392,0,0" HorizontalAlignment="Left"/>
+        <TextBox x:Name="tb_AC_DODGE_CAP" TextWrapping="Wrap" Width="27" Text="15" IsEnabled="False" VerticalAlignment="Top" Margin="254,392,0,0" HorizontalAlignment="Left"/>
+        <TextBlock TextWrapping="Wrap" Text=" cap " Width="26" VerticalAlignment="Top" Margin="281,393,0,0" HorizontalAlignment="Left"/>
+        <TextBlock TextWrapping="Wrap" Text="sum" Width="26" VerticalAlignment="Top" Margin="334,393,0,0" HorizontalAlignment="Left"/>
+        <TextBlock TextWrapping="Wrap" Width="62" VerticalAlignment="Top" Margin="385,349,0,0" HorizontalAlignment="Left"><Run Text="unc. dodge"/><LineBreak/><Run Text="def. awar"/></TextBlock>
+        <CheckBox x:Name="chb_AC_DODGE" Content="" VerticalAlignment="Top" Margin="460,358,0,0" HorizontalAlignment="Left" />
+        <TextBlock TextWrapping="Wrap" Text="haste (4)" Width="99" VerticalAlignment="Top" Margin="251,366,0,0" HorizontalAlignment="Left"/>
+        <CheckBox x:Name="chb_AC_HASTE" Content="" VerticalAlignment="Top" Margin="366,367,0,0" HorizontalAlignment="Left" />
+        <TextBox x:Name="tb_AC_BARDSONG_MOD" TextWrapping="Wrap" Width="17" Text="0" IsEnabled="False" VerticalAlignment="Top" Margin="482,304,0,0" HorizontalAlignment="Left"/>
+        <TextBox x:Name="tb_AC_SHADOWEVADE_MOD" TextWrapping="Wrap" Width="17" Text="0" IsEnabled="False" VerticalAlignment="Top" Margin="482,325,0,0" HorizontalAlignment="Left"/>
+        <TextBlock HorizontalAlignment="Left" Margin="68,348,0,0" TextWrapping="Wrap" Text="blades (6)" VerticalAlignment="Top" Width="58"/>
+        <CheckBox x:Name="chb_AC_BLADES" Content="" HorizontalAlignment="Left" Margin="144,349,0,0" VerticalAlignment="Top" />
+        <TextBlock HorizontalAlignment="Left" Margin="68,367,0,0" TextWrapping="Wrap" Text="gnome (6)" VerticalAlignment="Top" Width="58"/>
+        <CheckBox x:Name="chb_AC_GNOME" Content="" HorizontalAlignment="Left" Margin="144,368,0,0" VerticalAlignment="Top" />
+        <Rectangle Height="70" Stroke="Black" Width="134" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="638,297,0,0"/>
+        <TextBox x:Name="tb_AC_SUM_b" TextWrapping="Wrap" Width="22" Text="0" IsEnabled="False" VerticalAlignment="Top" Margin="692,342,0,0" HorizontalAlignment="Left"/>
+        <TextBox x:Name="tb_AC_SUM_p" TextWrapping="Wrap" Width="22" Text="0" IsEnabled="False" VerticalAlignment="Top" Margin="719,342,0,0" HorizontalAlignment="Left"/>
+        <TextBox x:Name="tb_AC_SUM_s" TextWrapping="Wrap" Width="22" Text="0" IsEnabled="False" VerticalAlignment="Top" Margin="746,342,0,0" HorizontalAlignment="Left"/>
+        <TextBox x:Name="tb_AC_SUM_BASE" TextWrapping="Wrap" Width="22" Text="0" IsEnabled="False" VerticalAlignment="Top" Margin="665,342,0,0" HorizontalAlignment="Left"/>
+        <TextBox x:Name="tb_AC_SUM_FF_difference" TextWrapping="Wrap" Width="22" Text="0" IsEnabled="False" VerticalAlignment="Top" Margin="692,323,0,0" HorizontalAlignment="Left"/>
+        <TextBox x:Name="tb_AC_SUM_FF" TextWrapping="Wrap" Width="22" Text="0" IsEnabled="False" VerticalAlignment="Top" Margin="665,323,0,0" HorizontalAlignment="Left"/>
+        <TextBox x:Name="tb_AC_SUM_TA" TextWrapping="Wrap" Width="22" Text="0" IsEnabled="False" VerticalAlignment="Top" Margin="665,304,0,0" HorizontalAlignment="Left"/>
+        <TextBlock TextWrapping="Wrap" Text="sum" Width="26" VerticalAlignment="Top" Margin="640,343,0,0" HorizontalAlignment="Left"/>
+        <TextBlock TextWrapping="Wrap" Text="ff" Width="26" VerticalAlignment="Top" Margin="640,324,0,0" HorizontalAlignment="Left"/>
+        <TextBlock TextWrapping="Wrap" Text="ta" Width="26" VerticalAlignment="Top" Margin="640,305,0,0" HorizontalAlignment="Left"/>
+        <TextBlock HorizontalAlignment="Left" Margin="68,385,0,0" TextWrapping="Wrap" Text="sagra (*1,5)" VerticalAlignment="Top" Width="69"/>
+        <CheckBox x:Name="chb_AC_SAGRA" Content="" HorizontalAlignment="Left" Margin="144,386,0,0" VerticalAlignment="Top" />
+        <TextBlock HorizontalAlignment="Left" Margin="514,289,0,0" TextWrapping="Wrap" Text="stat+class" VerticalAlignment="Top" Width="53" Foreground="Black" Background="White"/>
+        <TextBlock HorizontalAlignment="Left" Margin="639,372,0,0" TextWrapping="Wrap" Text="gnome/halfling" VerticalAlignment="Top" Width="88"/>
+        <CheckBox x:Name="chb_AC_SIZEBONUS" Content="" HorizontalAlignment="Left" Margin="732,372,0,0" VerticalAlignment="Top" />
+        <TextBox x:Name="tb_AC_SUM_BASE_EQUIP" TextWrapping="Wrap" Width="70" Text="0" IsEnabled="False" VerticalAlignment="Top" Margin="420,426,0,0" HorizontalAlignment="Left"/>
+        <TextBlock TextWrapping="Wrap" Width="86" VerticalAlignment="Top" Margin="246,428,0,0" HorizontalAlignment="Left"><Run Text="sum"/><Run Text=" base equip"/></TextBlock>
+        <TextBox x:Name="tb_AC_SUM_BASE_EQUIP_DODGE" TextWrapping="Wrap" Width="70" Text="0" IsEnabled="False" VerticalAlignment="Top" Margin="420,446,0,0" HorizontalAlignment="Left"/>
+        <TextBlock TextWrapping="Wrap" Width="142" VerticalAlignment="Top" Margin="246,447,0,0" HorizontalAlignment="Left"><Run Text="sum"/><Run Text=" base equip+all dodge"/></TextBlock>
+        <TextBox x:Name="tb_AC_string" HorizontalAlignment="Left" Margin="14,473,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="769" Height="44" Text="Купи череп, стервец!"/>
+    </Grid>
+</Window>
+"@
+
+$Global:xamGUI = [Windows.Markup.XamlReader]::Load((new-object System.Xml.XmlNodeReader $xmlWPF))
+
+$xmlWPF.SelectNodes('//*[@*[contains(translate(name(.),"n","N"),"Name")]]') | %{
+    Set-Variable -Name ($_.Name) -Value $xamGUI.FindName($_.Name) -Scope Global
+    }
+
+
+$fighter = @(
+	[pscustomobject]@{fort=2;ref=0;will=0}
+	[pscustomobject]@{fort=3;ref=0;will=0}
+	[pscustomobject]@{fort=3;ref=1;will=1}
+	[pscustomobject]@{fort=4;ref=1;will=1}
+	[pscustomobject]@{fort=4;ref=1;will=1}
+	[pscustomobject]@{fort=5;ref=2;will=2}
+	[pscustomobject]@{fort=5;ref=2;will=2}
+	[pscustomobject]@{fort=6;ref=2;will=2}
+	[pscustomobject]@{fort=6;ref=3;will=3}
+	[pscustomobject]@{fort=7;ref=3;will=3}
+	[pscustomobject]@{fort=7;ref=3;will=3}
+	[pscustomobject]@{fort=8;ref=4;will=4}
+	[pscustomobject]@{fort=8;ref=4;will=4}
+	[pscustomobject]@{fort=9;ref=4;will=4}
+	[pscustomobject]@{fort=9;ref=5;will=5}
+	[pscustomobject]@{fort=10;ref=5;will=5}
+	[pscustomobject]@{fort=10;ref=5;will=5}
+	[pscustomobject]@{fort=11;ref=6;will=6}
+	[pscustomobject]@{fort=11;ref=6;will=6}
+	[pscustomobject]@{fort=12;ref=6;will=6}
+	)
+$barbarian = $fighter
+$paladin = $fighter
+$ranger = $fighter
+$blackguard = $fighter[0..9]
+$pdk = $fighter[0..9]
+$bard = @(
+	[pscustomobject]@{fort=0;ref=2;will=2}
+	[pscustomobject]@{fort=0;ref=3;will=3}
+	[pscustomobject]@{fort=1;ref=3;will=3}
+	[pscustomobject]@{fort=1;ref=4;will=4}
+	[pscustomobject]@{fort=1;ref=4;will=4}
+	[pscustomobject]@{fort=2;ref=5;will=5}
+	[pscustomobject]@{fort=2;ref=5;will=5}
+	[pscustomobject]@{fort=2;ref=6;will=6}
+	[pscustomobject]@{fort=3;ref=6;will=6}
+	[pscustomobject]@{fort=3;ref=7;will=7}
+	[pscustomobject]@{fort=3;ref=7;will=7}
+	[pscustomobject]@{fort=4;ref=8;will=8}
+	[pscustomobject]@{fort=4;ref=8;will=8}
+	[pscustomobject]@{fort=4;ref=9;will=9}
+	[pscustomobject]@{fort=5;ref=9;will=9}
+	[pscustomobject]@{fort=5;ref=10;will=10}
+	[pscustomobject]@{fort=5;ref=10;will=10}
+	[pscustomobject]@{fort=6;ref=11;will=11}
+	[pscustomobject]@{fort=6;ref=11;will=11}
+	[pscustomobject]@{fort=6;ref=12;will=12}
+	)
+$harperscout = $bard[0..4]
+$cleric = @(
+	[pscustomobject]@{fort=2;ref=0;will=2}
+	[pscustomobject]@{fort=3;ref=0;will=3}
+	[pscustomobject]@{fort=3;ref=1;will=3}
+	[pscustomobject]@{fort=4;ref=1;will=4}
+	[pscustomobject]@{fort=4;ref=1;will=4}
+	[pscustomobject]@{fort=5;ref=2;will=5}
+	[pscustomobject]@{fort=5;ref=2;will=5}
+	[pscustomobject]@{fort=6;ref=2;will=6}
+	[pscustomobject]@{fort=6;ref=3;will=6}
+	[pscustomobject]@{fort=7;ref=3;will=7}
+	[pscustomobject]@{fort=7;ref=3;will=7}
+	[pscustomobject]@{fort=8;ref=4;will=8}
+	[pscustomobject]@{fort=8;ref=4;will=8}
+	[pscustomobject]@{fort=9;ref=4;will=9}
+	[pscustomobject]@{fort=9;ref=5;will=9}
+	[pscustomobject]@{fort=10;ref=5;will=10}
+	[pscustomobject]@{fort=10;ref=5;will=10}
+	[pscustomobject]@{fort=11;ref=6;will=11}
+	[pscustomobject]@{fort=11;ref=6;will=11}
+	[pscustomobject]@{fort=12;ref=6;will=12}
+    )
+$druid = $cleric
+$palemaster = $cleric[0..9]
+$dwarvendefender = $cleric[0..9]
+$rdd = $cleric[0..9]
+$monk =  @(
+	[pscustomobject]@{fort=2;ref=2;will=2}
+	[pscustomobject]@{fort=3;ref=3;will=3}
+	[pscustomobject]@{fort=3;ref=3;will=3}
+	[pscustomobject]@{fort=4;ref=4;will=4}
+	[pscustomobject]@{fort=4;ref=4;will=4}
+	[pscustomobject]@{fort=5;ref=5;will=5}
+	[pscustomobject]@{fort=5;ref=5;will=5}
+	[pscustomobject]@{fort=6;ref=6;will=6}
+	[pscustomobject]@{fort=6;ref=6;will=6}
+	[pscustomobject]@{fort=7;ref=7;will=7}
+	[pscustomobject]@{fort=7;ref=7;will=7}
+	[pscustomobject]@{fort=8;ref=8;will=8}
+	[pscustomobject]@{fort=8;ref=8;will=8}
+	[pscustomobject]@{fort=9;ref=9;will=9}
+	[pscustomobject]@{fort=9;ref=9;will=9}
+	[pscustomobject]@{fort=10;ref=10;will=10}
+	[pscustomobject]@{fort=10;ref=10;will=10}
+	[pscustomobject]@{fort=11;ref=11;will=11}
+	[pscustomobject]@{fort=11;ref=11;will=11}
+	[pscustomobject]@{fort=12;ref=12;will=12}
+    )
+$rogue = @(
+	[pscustomobject]@{fort=0;ref=2;will=0}
+	[pscustomobject]@{fort=0;ref=3;will=0}
+	[pscustomobject]@{fort=1;ref=3;will=1}
+	[pscustomobject]@{fort=1;ref=4;will=1}
+	[pscustomobject]@{fort=1;ref=4;will=1}
+	[pscustomobject]@{fort=2;ref=5;will=2}
+	[pscustomobject]@{fort=2;ref=5;will=2}
+	[pscustomobject]@{fort=2;ref=6;will=2}
+	[pscustomobject]@{fort=3;ref=6;will=3}
+	[pscustomobject]@{fort=3;ref=7;will=3}
+	[pscustomobject]@{fort=3;ref=7;will=3}
+	[pscustomobject]@{fort=4;ref=8;will=4}
+	[pscustomobject]@{fort=4;ref=8;will=4}
+	[pscustomobject]@{fort=4;ref=9;will=4}
+	[pscustomobject]@{fort=5;ref=9;will=5}
+	[pscustomobject]@{fort=5;ref=10;will=5}
+	[pscustomobject]@{fort=5;ref=10;will=5}
+	[pscustomobject]@{fort=6;ref=11;will=6}
+	[pscustomobject]@{fort=6;ref=11;will=6}
+	[pscustomobject]@{fort=6;ref=12;will=6}
+	)
+$shadowdancer = $rogue[0..9]
+$assassin = $rogue[0..9]
+$weaponmaster = $rogue[0..9]
+$wizard = @(
+	[pscustomobject]@{fort=0;ref=0;will=2}
+	[pscustomobject]@{fort=0;ref=0;will=3}
+	[pscustomobject]@{fort=1;ref=1;will=3}
+	[pscustomobject]@{fort=1;ref=1;will=4}
+	[pscustomobject]@{fort=1;ref=1;will=4}
+	[pscustomobject]@{fort=2;ref=2;will=5}
+	[pscustomobject]@{fort=2;ref=2;will=5}
+	[pscustomobject]@{fort=2;ref=2;will=6}
+	[pscustomobject]@{fort=3;ref=3;will=6}
+	[pscustomobject]@{fort=3;ref=3;will=7}
+	[pscustomobject]@{fort=3;ref=3;will=7}
+	[pscustomobject]@{fort=4;ref=4;will=8}
+	[pscustomobject]@{fort=4;ref=4;will=8}
+	[pscustomobject]@{fort=4;ref=4;will=9}
+	[pscustomobject]@{fort=5;ref=5;will=9}
+	[pscustomobject]@{fort=5;ref=5;will=10}
+	[pscustomobject]@{fort=5;ref=5;will=10}
+	[pscustomobject]@{fort=6;ref=6;will=11}
+	[pscustomobject]@{fort=6;ref=6;will=11}
+	[pscustomobject]@{fort=6;ref=6;will=12}
+	)
+$sorcerer = $wizard
+$arcanearcher = @(
+	[pscustomobject]@{fort=2;ref=2;will=0}
+	[pscustomobject]@{fort=3;ref=3;will=0}
+	[pscustomobject]@{fort=3;ref=3;will=1}
+	[pscustomobject]@{fort=4;ref=4;will=1}
+	[pscustomobject]@{fort=4;ref=4;will=1}
+	[pscustomobject]@{fort=5;ref=5;will=2}
+	[pscustomobject]@{fort=5;ref=5;will=2}
+	[pscustomobject]@{fort=6;ref=6;will=2}
+	[pscustomobject]@{fort=6;ref=6;will=3}
+	[pscustomobject]@{fort=7;ref=7;will=3}
+	[pscustomobject]@{fort=7;ref=7;will=3}
+	[pscustomobject]@{fort=8;ref=8;will=4}
+	[pscustomobject]@{fort=8;ref=8;will=4}
+	[pscustomobject]@{fort=9;ref=9;will=4}
+	[pscustomobject]@{fort=9;ref=9;will=5}
+	[pscustomobject]@{fort=10;ref=10;will=5}
+	[pscustomobject]@{fort=10;ref=10;will=5}
+	[pscustomobject]@{fort=11;ref=11;will=6}
+	[pscustomobject]@{fort=11;ref=11;will=6}
+	[pscustomobject]@{fort=12;ref=12;will=6}
+	)
+$championoftorm = $arcanearcher[0..9]
+$shifter = $arcanearcher[0..9]
+
+##############bab############
+$babHigh = @(
+	[pscustomobject]@{bab=1}
+	[pscustomobject]@{bab=2}
+	[pscustomobject]@{bab=3}
+	[pscustomobject]@{bab=4}
+	[pscustomobject]@{bab=5}
+	[pscustomobject]@{bab=6}
+	[pscustomobject]@{bab=7}
+	[pscustomobject]@{bab=8}
+	[pscustomobject]@{bab=9}
+	[pscustomobject]@{bab=10}
+	[pscustomobject]@{bab=11}
+	[pscustomobject]@{bab=12}
+	[pscustomobject]@{bab=13}
+	[pscustomobject]@{bab=14}
+	[pscustomobject]@{bab=15}
+	[pscustomobject]@{bab=16}
+	[pscustomobject]@{bab=17}
+	[pscustomobject]@{bab=18}
+	[pscustomobject]@{bab=19}
+	[pscustomobject]@{bab=20}
+	)
+$babMid = @(
+	[pscustomobject]@{bab=0}
+	[pscustomobject]@{bab=1}
+	[pscustomobject]@{bab=2}
+	[pscustomobject]@{bab=3}
+	[pscustomobject]@{bab=3}
+	[pscustomobject]@{bab=4}
+	[pscustomobject]@{bab=5}
+	[pscustomobject]@{bab=6}
+	[pscustomobject]@{bab=6}
+	[pscustomobject]@{bab=7}
+	[pscustomobject]@{bab=8}
+	[pscustomobject]@{bab=9}
+	[pscustomobject]@{bab=9}
+	[pscustomobject]@{bab=10}
+	[pscustomobject]@{bab=11}
+	[pscustomobject]@{bab=12}
+	[pscustomobject]@{bab=12}
+	[pscustomobject]@{bab=13}
+	[pscustomobject]@{bab=14}
+	[pscustomobject]@{bab=15}
+	)
+$babLow = @(
+	[pscustomobject]@{bab=0}
+	[pscustomobject]@{bab=1}
+	[pscustomobject]@{bab=1}
+	[pscustomobject]@{bab=2}
+	[pscustomobject]@{bab=2}
+	[pscustomobject]@{bab=3}
+	[pscustomobject]@{bab=3}
+	[pscustomobject]@{bab=4}
+	[pscustomobject]@{bab=4}
+	[pscustomobject]@{bab=5}
+	[pscustomobject]@{bab=5}
+	[pscustomobject]@{bab=6}
+	[pscustomobject]@{bab=6}
+	[pscustomobject]@{bab=7}
+	[pscustomobject]@{bab=7}
+	[pscustomobject]@{bab=8}
+	[pscustomobject]@{bab=8}
+	[pscustomobject]@{bab=9}
+	[pscustomobject]@{bab=9}
+	[pscustomobject]@{bab=10}
+	)
+
+$fighterBAB = $babHigh
+$barbarianBAB = $babHigh
+$paladinBAB = $babHigh
+$rangerBAB = $babHigh
+$blackguardBAB = $babHigh
+$pdkBAB = $babHigh[0..9]
+$bardBAB = $babMid
+$harperscoutBAB = $babMid[0..4]
+$clericBAB = $babMid
+$druidBAB = $babMid
+$palemasterBAB = $babLow[0..9]
+$dwarvendefenderBAB = $babHigh[0..9]
+$rddBAB = $babMid[0..9]
+$monkBAB = $babMid
+#$monkSialaBAB = $babHigh
+$rogueBAB = $babMid
+$shadowdancerBAB = $babMid[0..9]
+$assassinBAB = $babMid[0..9]
+$weaponmasterBAB = $babHigh[0..9]
+$wizardBAB = $babLow
+$sorcererBAB = $babLow
+$arcanearcherBAB = $babHigh[0..9]
+$championoftormBAB = $babHigh[0..9]
+$shifterBAB = $babMid[0..9]
+
+###################################
+
+$classes = "barbarian","bard","cleric","druid","fighter","monk","paladin","ranger","rogue","sorcerer","wizard","shadowdancer","harperscout","arcanearcher","assassin","blackguard","championoftorm","weaponmaster","palemaster","shifter","dwarvendefender","rdd","pdk"
+$nClasses = "barbarian","bard","cleric","druid","fighter","monk","paladin","ranger","rogue","sorcerer","wizard"
+$eClasses = "shadowdancer","harperscout","arcanearcher","assassin","blackguard","championoftorm","weaponmaster","palemaster","shifter","dwarvendefender","rdd","pdk"
+
+function cmb_filler
+{
+	param( 
+		$__cmb
+	)
+	$__cmb.Items.Add("<none>") | Out-Null
+	$classes | foreach {
+		$__cmb.Items.Add($_)
+		$__cmb.SelectedIndex = 0
+	} | Out-Null
+}
+
+cmb_filler($cmb_class1)
+cmb_filler($cmb_class2)
+cmb_filler($cmb_class3)
+cmb_filler($cmb_class4)
+
+$__armor = @(0,1,2,3,4,5,6,7,8)
+$__shield = @(0,1,2,3)
+
+$__armor | foreach {
+	$cmb_AC_armor_base.Items.Add($_)
+	$cmb_AC_armor_base.SelectedIndex = 0
+} | Out-Null
+
+$__shield | foreach {
+	$cmb_AC_shield_base.Items.Add($_)
+	$cmb_AC_shield_base.SelectedIndex = 0
+} | Out-Null
+
+##################################################
+$cmb_class1.add_SelectionChanged(
+{
+	if($cmb_class1.items[$cmb_class1.SelectedIndex] -in $eClasses)
+	{
+		$sld_class1.IsEnabled = $true
+		$sld_class1.minimum = "1"
+		$sld_class1.maximum = "10"
+	}
+	elseif($cmb_class1.items[$cmb_class1.SelectedIndex] -in $nClasses)
+	{
+		$sld_class1.IsEnabled = $true
+		$sld_class1.minimum = "1"
+		$sld_class1.maximum = "20"
+	}
+	elseif($cmb_class1.items[$cmb_class1.SelectedIndex] -eq "<none>")
+	{
+		$sld_class1.IsEnabled = $false
+		$sld_class1.value = 0
+		$tb_Sld1.text = 0
+		$tb_class1_f.text = 0
+		$tb_class1_r.text = 0
+		$tb_class1_w.text = 0
+	}
+	#checkbox_calculation
+})
+
+$cmb_class2.add_SelectionChanged(
+{
+	if($cmb_class2.items[$cmb_class2.SelectedIndex] -in $eClasses)
+	{
+		$sld_class2.IsEnabled = $true
+		$sld_class2.minimum = "1"
+		$sld_class2.maximum = "10"
+	}
+	elseif($cmb_class2.items[$cmb_class2.SelectedIndex] -in $nClasses)
+	{
+		$sld_class2.IsEnabled = $true
+		$sld_class2.minimum = "1"
+		$sld_class2.maximum = "20"
+	}
+	elseif($cmb_class2.items[$cmb_class2.SelectedIndex] -eq "<none>")
+	{
+		$sld_class2.IsEnabled = $false
+		$sld_class2.value = 0
+		$tb_Sld2.text = 0
+		$tb_class2_f.text = 0
+		$tb_class2_r.text = 0
+		$tb_class2_w.text = 0
+	}
+	#checkbox_calculation
+})
+
+$cmb_class3.add_SelectionChanged(
+{
+	if($cmb_class3.items[$cmb_class3.SelectedIndex] -in $eClasses)
+	{
+		$sld_class3.IsEnabled = $true
+		$sld_class3.minimum = "1"
+		$sld_class3.maximum = "10"
+	}
+	elseif($cmb_class3.items[$cmb_class3.SelectedIndex] -in $nClasses)
+	{
+		$sld_class3.IsEnabled = $true
+		$sld_class3.minimum = "1"
+		$sld_class3.maximum = "20"
+	}
+	elseif($cmb_class3.items[$cmb_class3.SelectedIndex] -eq "<none>")
+	{
+		$sld_class3.IsEnabled = $false
+		$sld_class3.value = 0
+		$tb_Sld3.text = 0
+		$tb_class3_f.text = 0
+		$tb_class3_r.text = 0
+		$tb_class3_w.text = 0
+	}
+	#checkbox_calculation
+})
+
+$cmb_class4.add_SelectionChanged(
+{
+	if($cmb_class4.items[$cmb_class4.SelectedIndex] -in $eClasses)
+	{
+		$sld_class4.IsEnabled = $true
+		$sld_class4.minimum = "1"
+		$sld_class4.maximum = "10"
+	}
+	elseif($cmb_class4.items[$cmb_class4.SelectedIndex] -in $nClasses)
+	{
+		$sld_class4.IsEnabled = $true
+		$sld_class4.minimum = "1"
+		$sld_class4.maximum = "20"
+	}
+	elseif($cmb_class4.items[$cmb_class4.SelectedIndex] -eq "<none>")
+	{
+		$sld_class4.IsEnabled = $false
+		$sld_class4.value = 0
+		$tb_Sld4.text = 0
+		$tb_class4_f.text = 0
+		$tb_class4_r.text = 0
+		$tb_class4_w.text = 0
+	}
+	#checkbox_calculation
+})
+##################################################
+
+##################################################
+$sld_class1.add_valuechanged(
+{
+	$tb_Sld1.text = $sld_class1.value
+	
+	if($cmb_class1.items[$cmb_class1.SelectedIndex] -eq "<none>")
+	{
+		$tb_Sld1.text = 0
+		$tb_class1_f.text = 0
+		$tb_class1_r.text = 0
+		$tb_class1_w.text = 0
+		
+		$tb_class1_BAB.Text = 0
+	}
+	else
+	{
+		$__class = Get-Variable($cmb_class1.items[$cmb_class1.SelectedIndex])
+		$__index = $sld_class1.value - 1
+		
+		$tb_class1_f.text = $__class.value[$__index].fort
+		$tb_class1_r.text = $__class.value[$__index].ref
+		$tb_class1_w.text = $__class.value[$__index].will
+
+		$__classBAB = Get-Variable( ($cmb_class1.items[$cmb_class1.SelectedIndex]) + "BAB")
+		$tb_class1_BAB.Text = $__classBAB.value[$__index].BAB
+	}
+
+	$tb_lvlSum.text = [int]$tb_Sld1.text + [int]$tb_Sld2.text + [int]$tb_Sld3.text + [int]$tb_Sld4.text
+	$tb_SUM_BAB.text = [int]$tb_class1_BAB.Text + [int]$tb_class2_BAB.Text + [int]$tb_class3_BAB.Text + [int]$tb_class4_BAB.Text
+	checkbox_calculation
+})
+$sld_class2.add_valuechanged(
+{
+	$tb_Sld2.text = $sld_class2.value
+	
+	if($cmb_class2.items[$cmb_class2.SelectedIndex] -eq "<none>")
+	{
+		$tb_Sld2.text = 0
+		$tb_class2_f.text = 0
+		$tb_class2_r.text = 0
+		$tb_class2_w.text = 0
+		
+		$tb_class2_BAB.Text = 0
+	}
+	else
+	{
+		$__class = Get-Variable($cmb_class2.items[$cmb_class2.SelectedIndex])
+		$__index = $sld_class2.value - 1
+		$tb_class2_f.text = $__class.value[$__index].fort
+		$tb_class2_r.text = $__class.value[$__index].ref
+		$tb_class2_w.text = $__class.value[$__index].will
+		
+		$__classBAB = Get-Variable( ($cmb_class2.items[$cmb_class2.SelectedIndex]) + "BAB")
+		$tb_class2_BAB.Text = $__classBAB.value[$__index].BAB
+	}
+
+	$tb_lvlSum.text = [int]$tb_Sld1.text + [int]$tb_Sld2.text + [int]$tb_Sld3.text + [int]$tb_Sld4.text
+	$tb_SUM_BAB.text = [int]$tb_class1_BAB.Text + [int]$tb_class2_BAB.Text + [int]$tb_class3_BAB.Text + [int]$tb_class4_BAB.Text
+	checkbox_calculation
+})
+$sld_class3.add_valuechanged(
+{
+	$tb_Sld3.text = $sld_class3.value
+	
+	if($cmb_class3.items[$cmb_class3.SelectedIndex] -eq "<none>")
+	{
+		$tb_Sld3.text = 0
+		$tb_class3_f.text = 0
+		$tb_class3_r.text = 0
+		$tb_class3_w.text = 0
+		
+		$tb_class3_BAB.Text = 0
+	}
+	else
+	{
+		$__class = Get-Variable($cmb_class3.items[$cmb_class3.SelectedIndex])
+		$__index = $sld_class3.value - 1
+		$tb_class3_f.text = $__class.value[$__index].fort
+		$tb_class3_r.text = $__class.value[$__index].ref
+		$tb_class3_w.text = $__class.value[$__index].will
+		
+		$__classBAB = Get-Variable( ($cmb_class3.items[$cmb_class3.SelectedIndex]) + "BAB")
+		$tb_class3_BAB.Text = $__classBAB.value[$__index].BAB
+	}
+
+	$tb_lvlSum.text = [int]$tb_Sld1.text + [int]$tb_Sld2.text + [int]$tb_Sld3.text + [int]$tb_Sld4.text
+	$tb_SUM_BAB.text = [int]$tb_class1_BAB.Text + [int]$tb_class2_BAB.Text + [int]$tb_class3_BAB.Text + [int]$tb_class4_BAB.Text
+	checkbox_calculation
+})
+$sld_class4.add_valuechanged(
+{
+	$tb_Sld4.text = $sld_class4.value
+	
+	if($cmb_class4.items[$cmb_class4.SelectedIndex] -eq "<none>")
+	{
+		$tb_Sld4.text = 0
+		$tb_class4_f.text = 0
+		$tb_class4_r.text = 0
+		$tb_class4_w.text = 0
+		
+		$tb_class4_BAB.Text = 0
+	}
+	else
+	{
+		$__class = Get-Variable($cmb_class4.items[$cmb_class4.SelectedIndex])
+		$__index = $sld_class4.value - 1
+		$tb_class4_f.text = $__class.value[$__index].fort
+		$tb_class4_r.text = $__class.value[$__index].ref
+		$tb_class4_w.text = $__class.value[$__index].will
+
+		$__classBAB = Get-Variable( ($cmb_class4.items[$cmb_class4.SelectedIndex]) + "BAB")
+		$tb_class4_BAB.Text = $__classBAB.value[$__index].BAB
+	}
+
+	$tb_lvlSum.text = [int]$tb_Sld1.text + [int]$tb_Sld2.text + [int]$tb_Sld3.text + [int]$tb_Sld4.text
+	$tb_SUM_BAB.text = [int]$tb_class1_BAB.Text + [int]$tb_class2_BAB.Text + [int]$tb_class3_BAB.Text + [int]$tb_class4_BAB.Text
+	checkbox_calculation
+})
+
+
+function checkbox_calculation
+{
+	if($chb_gFort.IsChecked){ $__gFort = 2 } else {	$__gFort = 0 }
+	if($chb_gRef.IsChecked){ $__gRef = 2 } else {	$__gRef = 0 }
+	if($chb_gWill.IsChecked){ $__gWill = 2 } else {	$__gWill = 0 }
+
+	if($chb_eFort.IsChecked){ $__eFort = 4 } else {	$__eFort = 0 }
+	if($chb_eRef.IsChecked){ $__eRef = 4 } else {	$__eRef = 0 }
+	if($chb_eWill.IsChecked){ $__eWill = 4 } else {	$__eWill = 0 }
+
+	if($chb_epicCAP.IsChecked){ $__epicCAP = 10 } else {	$__epicCAP = 0 }
+
+	if($tb_CON.text -NE 0){$tb_modCON.text = [math]::Floor( ($tb_CON.text - 10)/2 )} else {$tb_modCON.text = 0}
+	if($tb_DEX.text -NE 0){$tb_modDEX.text = [math]::Floor( ($tb_DEX.text - 10)/2 )} else {$tb_modDEX.text = 0}
+	if($tb_WIS.text -NE 0){$tb_modWIS.text = [math]::Floor( ($tb_WIS.text - 10)/2 )} else {$tb_modWIS.text = 0}
+
+	if($tb_STR.text -NE 0){$tb_modSTR.text = [math]::Floor( ($tb_STR.text - 10)/2 )} else {$tb_modSTR.text = 0}
+
+	if($tb_CHA.text -NE 0){$tb_modCHA.text = [math]::Floor( ($tb_CHA.text - 10)/2 )} else {$tb_modCHA.text = 0}
+	if($chb_DARKBLS.IsChecked){$__darkb = 1} else {$__darkb = 0}
+	if($chb_DIVINEBLS.IsChecked){$__divb = 1} else {$__divb = 0}
+
+    if($chb_LOH.IsChecked){$__LOH = 1} else {$__LOH = 0}
+    if($chb_SS.IsChecked){$__SS = 1} else {$__SS = 0}
+
+    if($chb_UNI20.IsChecked){$__UNI20 = 20} else {$__UNI20 = 0}
+
+	$__baseFort = [int]$tb_modCON.text + $__gFort +  $__eFort + $__epicCAP + [int]$tb_class1_f.text + [int]$tb_class2_f.text + [int]$tb_class3_f.text + [int]$tb_class4_f.text + [int]$tb_modCHA.text * ($__darkb + $__divb) + $__LOH + $__SS + $__UNI20
+	$__baseRef = [int]$tb_modDEX.text + $__gRef +  $__eRef + $__epicCAP + [int]$tb_class1_r.text + [int]$tb_class2_r.text + [int]$tb_class3_r.text + [int]$tb_class4_r.text + [int]$tb_modCHA.text * ($__darkb + $__divb) + $__LOH + $__UNI20
+	$__baseWill = [int]$tb_modWIS.text + $__gWill +  $__eWill + $__epicCAP + [int]$tb_class1_w.text + [int]$tb_class2_w.text + [int]$tb_class3_w.text + [int]$tb_class4_w.text + [int]$tb_modCHA.text * ($__darkb + $__divb) + $__LOH + $__SS + $__UNI20
+
+	$tb_SUM_f.text = $__baseFort
+	$tb_SUM_r.text = $__baseRef
+	$tb_SUM_w.text = $__baseWill
+
+	##############################################################
+
+	$tb_lvlSum.text = [int]$tb_Sld1.text + [int]$tb_Sld2.text + [int]$tb_Sld3.text + [int]$tb_Sld4.text
+	$tb_SUM_BAB.text = [int]$tb_class1_BAB.Text + [int]$tb_class2_BAB.Text + [int]$tb_class3_BAB.Text + [int]$tb_class4_BAB.Text
+
+	if($chb_gnomeAB.IsChecked){$__gnomeAB = 1} else {$__gnomeAB = 0}
+	if($chb_halfelfAB.IsChecked){$__halfelfAB = 6} else {$__halfelfAB = 0}
+	if($chb_SagraHalfElf.IsChecked){$__SagraHalfElf = 9} else {$__SagraHalfElf = 0}
+	$__str = 1
+	if($chb_finesse.IsChecked){	$__finesse = 1;	$__str = 0}	elseif((!$chb_finesse.IsChecked)) { $__finesse = 0 }
+	elseif((!$chb_finesse.IsChecked) -and !($chb_zen.IsChecked)){ $__str = 1}
+
+	if($chb_zen.IsChecked){$__zen = 1;$__str = 0} elseif((!($chb_zen.IsChecked))) {$__zen = 0}
+	elseif ((!$chb_finesse.IsChecked) -and !($chb_zen.IsChecked)) {$__str = 1}
+
+	if($chb_SialaMonk.IsChecked){ $global:monkBAB = $babHigh } else { $global:monkBAB = $babMid }
+	
+	switch($tb_WMlvl.text)
+	{
+		default {$__WMlvl = 0}
+		{$_ -lt 5} {$__WMlvl = 0}
+		{$_ -in 5..12} {$__WMlvl = 1}
+		{$_ -in 13..15} {$__WMlvl = 2}
+		{$_ -in 16..18} {$__WMlvl = 3}
+		{$_ -in 19..21} {$__WMlvl = 4}
+		{$_ -in 22..24} {$__WMlvl = 5}
+		{$_ -in 25..27} {$__WMlvl = 6}
+		{$_ -in 25..30} {$__WMlvl = 7}
+	}
+
+	if($tb_AAlvl.text -NE 0){$__AAlvl = [math]::ceiling( ($tb_AAlvl.text)/2 )} else {$__AAlvl = 0}
+
+	switch($tb_BGlvl.text)
+	{
+		default {$__BGlvl = 0}
+		{$_ -in 6..10}{$__BGlvl = 1}
+		{$_ -in 11..20}{$__BGlvl = 2}
+		{$_ -in 21..29}{$__BGlvl = 3}
+		{$_ -eq 30}{$__BGlvl = 14}
+	}
+
+	if($chb_focus.IsChecked){$__focus = 1} else {$__focus = 0}
+	if($chb_Efocus.IsChecked){$__Efocus = 2} else {$__Efocus = 0}
+	if($chb_prowess.IsChecked){$__prowess = 1} else {$__prowess = 0}
+
+	$tb_SUM_BA.text = 10 + [int]$tb_SUM_BAB.text + ($__str * [int]$tb_modSTR.text) + ($__finesse * [int]$tb_modDEX.text) + ($__zen * [int]$tb_modWIS.text) + $__gnomeAB + $__halfelfAB + $__SagraHalfElf + $__WMlvl + $__AAlvl + $__BGlvl + $__focus + $__Efocus + $__prowess + [int]$tb_abBuff.text
+
+	$tb_free20cap.text = 20 - $__halfelfAB - $__SagraHalfElf - $__BGlvl - [int]$tb_abBuff.text
+	#tb_SUM_BAB
+	#tb_SUM_Attacks
+	#tb_SUM_Monk_Attacks
+
+	switch([int]$tb_SUM_BAB.text)
+	{
+		{$_ -in 0..5} {$tb_SUM_Attacks.text= $tb_SUM_BA.text}
+		{$_ -in 6..10} {$tb_SUM_Attacks.text= $tb_SUM_BA.text +"/"+ $($tb_SUM_BA.text - 5)}
+		{$_ -in 11..15} {$tb_SUM_Attacks.text= $tb_SUM_BA.text +"/"+ $($tb_SUM_BA.text - 5) +"/"+ $($tb_SUM_BA.text - 10)}
+		{$_ -in 16..20} {$tb_SUM_Attacks.text= $tb_SUM_BA.text +"/"+ $($tb_SUM_BA.text - 5) +"/"+ $($tb_SUM_BA.text - 10) +"/"+ $($tb_SUM_BA.text - 15)}
+	}
+
+	switch([int]$tb_SUM_BAB.text)
+	{
+		{$_ -in 0..3} {$tb_SUM_Monk_Attacks.text= $tb_SUM_BA.text}
+		{$_ -in 4..6} {$tb_SUM_Monk_Attacks.text= $tb_SUM_BA.text +"/"+ $($tb_SUM_BA.text - 3)}
+		{$_ -in 7..9} {$tb_SUM_Monk_Attacks.text= $tb_SUM_BA.text +"/"+ $($tb_SUM_BA.text - 3) +"/"+ $($tb_SUM_BA.text - 6)}
+		{$_ -in 10..12} {$tb_SUM_Monk_Attacks.text= $tb_SUM_BA.text +"/"+ $($tb_SUM_BA.text - 3) +"/"+ $($tb_SUM_BA.text - 6) +"/"+ $($tb_SUM_BA.text - 9)}
+		{$_ -in 13..15} {$tb_SUM_Monk_Attacks.text= $tb_SUM_BA.text +"/"+ $($tb_SUM_BA.text - 3) +"/"+ $($tb_SUM_BA.text - 6) +"/"+ $($tb_SUM_BA.text - 9) +"/"+ $($tb_SUM_BA.text - 12)}
+		{$_ -in 16..20} {$tb_SUM_Monk_Attacks.text= $tb_SUM_BA.text +"/"+ $($tb_SUM_BA.text - 3) +"/"+ $($tb_SUM_BA.text - 6) +"/"+ $($tb_SUM_BA.text - 9) +"/"+ $($tb_SUM_BA.text - 12) +"/"+ $($tb_SUM_BA.text - 15)}
+	}
+	####
+	switch ([int]$cmb_AC_armor_base.SelectedIndex)
+	{
+		0 {$global:__maxDEXMOD = [int]$tb_modDEX.text}
+		1 {$global:__maxDEXMOD = [math]::min(8,[int]$tb_modDEX.text)}
+		2 {$global:__maxDEXMOD = [math]::min(7,[int]$tb_modDEX.text)}
+		3 {$global:__maxDEXMOD = [math]::min(6,[int]$tb_modDEX.text)}
+		4 {$global:__maxDEXMOD = [math]::min(5,[int]$tb_modDEX.text)}
+		5 {$global:__maxDEXMOD = [math]::min(4,[int]$tb_modDEX.text)}
+		6 {$global:__maxDEXMOD = [math]::min(3,[int]$tb_modDEX.text)}
+		7 {$global:__maxDEXMOD = [math]::min(2,[int]$tb_modDEX.text)}
+		8 {$global:__maxDEXMOD = [math]::min(1,[int]$tb_modDEX.text)}
+	}
+	
+	if($chb_AC_BLADES.isChecked){$__AC_BLADES = 6} else {$__AC_BLADES = 0}
+	if($chb_AC_GNOME.isChecked){$__AC_GNOME = 6} else {$__AC_GNOME = 0}
+	if($chb_AC_SAGRA.isChecked){$__AC_SAGRA = 1.5} else {$__AC_SAGRA = 1}
+	
+	$__siala_ac = $__AC_SAGRA * ($__AC_GNOME + $__AC_BLADES)
+
+	$tb_AC_SHIELD_BASE.text = [math]::max($tb_AC_SHIELD_BASE.text,$__siala_ac)
+	#$tb_AC_SHIELD_BASE.text = $__siala_ac
+
+	switch([int]$tb_AC_BARDSONG.text)
+	{
+		{$_ -in 0..10} {$__bardsong = 0}
+		{$_ -in 11..13} {$__bardsong = 2}
+		{$_ -eq 14} {$__bardsong = 3}
+		{$_ -eq 15} {$__bardsong = 4}
+		{$_ -in 16..24} {$__bardsong = 5}
+		{$_ -in 25..29} {$__bardsong = 6}
+		{$_ -in 30..40} {$__bardsong = 7}
+	}
+	$tb_AC_BARDSONG_MOD.text = $__bardsong
+	switch([int]$tb_AC_SHADOWEVADE.text)
+	{
+		{$_ -in 0..3}{$__shadowevade = 0}
+		{$_ -in 4..5}{$__shadowevade = 1}
+		{$_ -in 6..7}{$__shadowevade = 3}
+		{$_ -in 8..9}{$__shadowevade = 5}
+		{$_ -in 10..24}{$__shadowevade = 7}
+		{$_ -in 25..29}{$__shadowevade = 8}
+		{$_ -eq 30}{$__shadowevade = 9}
+	}
+	$tb_AC_SHADOWEVADE_MOD.text = $__shadowevade
+	if($chb_EMA.IsChecked)
+	{	
+		$__EMA_DODGE = 5
+		$tb_AC_ARMOR_BASE.text = [math]::max(5,$tb_AC_ARMOR_BASE.text)
+		$tb_AC_NATURAL_BASE.text = [math]::max(5,$tb_AC_NATURAL_BASE.text)
+		$tb_AC_DEFLECT_BASE.text = [math]::max(5,$tb_AC_DEFLECT_BASE.text)
+	}
+	else{$__EMA_DODGE = 0}
+
+	if($chb_DSH.IsChecked){$__DSH = $tb_modCHA.text}else{$__DSH = 0}
+	if($chb_DS.IsChecked){$__DS = 4}else{$__DS = 0}
+	if($chb_MA.IsChecked)
+	{
+		$__MA_DODGE = 1
+		$tb_AC_ARMOR_BASE.text = [math]::max(1,$tb_AC_ARMOR_BASE.text)
+		$tb_AC_NATURAL_BASE.text = [math]::max(1,$tb_AC_NATURAL_BASE.text)
+		$tb_AC_DEFLECT_BASE.text = [math]::max(1,$tb_AC_DEFLECT_BASE.text)
+	}
+	else{$__MA_DODGE = 0}
+
+	if($chb_AC_HASTE.IsChecked){$__AC_haste = 4}else {$__AC_haste = 0}
+
+	$__raw_dodge = ([int]$tb_AC_DODGE_BASE.text + $__bardsong + $__shadowevade + $__EMA_DODGE + $__DSH + $__DS + $__MA_DODGE + $__AC_haste)
+	$tb_AC_DODGE_SUM_BASE.text = [math]::min(20,$__raw_dodge)
+	$tb_AC_DODGE_CAP.text = 20 - $__raw_dodge
+
+	$tb_AC_DODGE_SUM_b.text = [math]::min(20,[int]$tb_AC_DODGE_SUM_BASE.text) + [int]$tb_AC_DODGE_b.Text
+	$tb_AC_DODGE_SUM_p.text = [math]::min(20,[int]$tb_AC_DODGE_SUM_BASE.text) + [int]$tb_AC_DODGE_p.Text
+	$tb_AC_DODGE_SUM_s.text = [math]::min(20,[int]$tb_AC_DODGE_SUM_BASE.text) + [int]$tb_AC_DODGE_s.Text
+#
+	if($tb_AC_MONK.Text -NE 0){$__monkAC = [math]::Floor( ($tb_AC_MONK.Text)/5 )} else {$__monkAC = 0}
+	if($tb_AC_MONK.Text -GE 4){$__monkACWIS = 1} else {$__monkACWIS = 0}
+	$tb_AC_MONK_MOD.text = $__monkAC
+	if(($cmb_AC_shield_base.SelectedIndex -NE 0) -OR ($cmb_AC_armor_base.SelectedIndex -NE 0)){$__popysk_monka = 0}else{$__popysk_monka = 1}
+	switch ($tb_AC_RDD.Text)
+	{
+		{$_ -eq 0} {$__rddAC = 0 }
+		{$_ -in 1..4} {$__rddAC = 1 }
+		{$_ -in 5..8} {$__rddAC = 2 }
+		{$_ -in 8..9} {$__rddAC = 3 }
+		{$_ -in 10..14} {$__rddAC = 4 }
+		{$_ -in 15..19} {$__rddAC = 5 }
+		{$_ -in 20..24} {$__rddAC = 6 }
+		{$_ -in 25..29} {$__rddAC = 7 }
+		{$_ -eq 30} {$__rddAC = 8 }
+	}
+	$tb_AC_RDD_MOD.text = $__rddAC
+	switch ($tb_AC_PM.Text)
+	{
+		{$_ -eq 0} {$__pmAC = 0 }
+		{$_ -in 1..3} {$__pmAC = 2}
+		{$_ -in 4..7} {$__pmAC = 4}
+		{$_ -in 8..11} {$__pmAC = 6}
+		{$_ -in 12..15} {$__pmAC = 8}
+		{$_ -in 16..19} {$__pmAC = 10}
+		{$_ -in 20..23} {$__pmAC = 12}
+		{$_ -in 24..27} {$__pmAC = 14}
+		{$_ -in 28..30} {$__pmAC = 16}
+	}
+	$tb_AC_PM_MOD.text = $__pmAC
+	if($chb_AC_AS.IsChecked){$__armorskin = 2}else{$__armorskin = 0}
+	IF($chb_AC_EXP.IsChecked){$__exp = 5;$chb_AC_iEXP.IsChecked = 0}else{$__exp = 0}
+	if($chb_AC_iEXP.IsChecked){$__iexp = 10;$chb_AC_EXP.IsChecked = 0}else{$__iexp = 0}
+
+	if($tb_AC_thumble.Text -NE 0){$__thumbleAC = [math]::Floor( ($tb_AC_thumble.Text)/5 )} else {$__thumbleAC = 0}
+	$tb_AC_thumble_MOD.text = $__thumbleAC
+	if($chb_AC_DODGE.isChecked){$__ACDODGE = 1}else{$__ACDODGE = 0}
+
+	$tb_AC_OTHER_SUM_ta.text = $global:__maxDEXMOD + $__exp + $__iexp + $__thumbleAC
+	
+	$tb_AC_OTHER_SUM_ff.text = $__monkAC + $__ACDODGE * $global:__maxDEXMOD + $__popysk_monka * $__monkACWIS * $tb_modWIS.text + $__rddAC + $__pmAC + $__armorskin + $__exp + $__iexp + $__ACDODGE * $__thumbleAC
+	
+	$tb_AC_OTHER_SUM.Text = $__monkAC + $global:__maxDEXMOD + $__popysk_monka * $__monkACWIS * $tb_modWIS.text + $__rddAC + $__pmAC + $__armorskin + $__exp + $__iexp + $__thumbleAC
+#
+
+	if($chb_AC_SIZEBONUS.isChecked){$__AC_SIZEBONUS = 1}else{$__AC_SIZEBONUS = 0}
+
+	$tb_AC_SUM_TA.text = 10 + $__AC_SIZEBONUS + $tb_AC_ARMOR_BASE.text +  + $tb_AC_SHIELD_BASE.text + $tb_AC_NATURAL_BASE.text + $tb_AC_DEFLECT_BASE.text + $tb_AC_DODGE_SUM_BASE.Text + $tb_AC_OTHER_SUM_ta.Text
+
+	$tb_AC_SUM_FF.text = 10 + $__AC_SIZEBONUS + $tb_AC_ARMOR_BASE.text + $tb_AC_SHIELD_BASE.text + $tb_AC_NATURAL_BASE.text + $tb_AC_DEFLECT_BASE.text + $tb_AC_OTHER_SUM_ff.text + $cmb_AC_shield_base.SelectedIndex + $cmb_AC_armor_base.SelectedIndex
+
+	$tb_AC_SUM_BASE.text = 10 + $__AC_SIZEBONUS + $tb_AC_ARMOR_BASE.text + $cmb_AC_shield_base.SelectedIndex + $tb_AC_SHIELD_BASE.text + $tb_AC_NATURAL_BASE.text + $tb_AC_DEFLECT_BASE.text + $tb_AC_DODGE_SUM_BASE.Text + $tb_AC_OTHER_SUM.Text + $cmb_AC_armor_base.SelectedIndex
+	
+	$tb_AC_SUM_b.text = 10 + $__AC_SIZEBONUS + [math]::max($tb_AC_ARMOR_BASE.text,$tb_AC_ARMOR_b.text) + [math]::max($tb_AC_SHIELD_BASE.text,$tb_AC_SHIELD_b.text) + [math]::max($tb_AC_NATURAL_BASE.text,$tb_AC_NATURAL_b.text) + [math]::max($tb_AC_DEFLECT_BASE.text,$tb_AC_DEFLECT_b.text) + $tb_AC_DODGE_SUM_b.text + $tb_AC_OTHER_SUM.text + $cmb_AC_armor_base.SelectedIndex + $cmb_AC_shield_base.SelectedIndex
+	$tb_AC_SUM_p.text = 10 + $__AC_SIZEBONUS + [math]::max($tb_AC_ARMOR_BASE.text,$tb_AC_ARMOR_p.text) + [math]::max($tb_AC_SHIELD_BASE.text,$tb_AC_SHIELD_p.text) + [math]::max($tb_AC_NATURAL_BASE.text,$tb_AC_NATURAL_p.text) + [math]::max($tb_AC_DEFLECT_BASE.text,$tb_AC_DEFLECT_p.text) + $tb_AC_DODGE_SUM_p.text + $tb_AC_OTHER_SUM.text + $cmb_AC_armor_base.SelectedIndex + $cmb_AC_shield_base.SelectedIndex
+	$tb_AC_SUM_s.text = 10 + $__AC_SIZEBONUS + [math]::max($tb_AC_ARMOR_BASE.text,$tb_AC_ARMOR_s.text) + [math]::max($tb_AC_SHIELD_BASE.text,$tb_AC_SHIELD_s.text) + [math]::max($tb_AC_NATURAL_BASE.text,$tb_AC_NATURAL_s.text) + [math]::max($tb_AC_DEFLECT_BASE.text,$tb_AC_DEFLECT_s.text) + $tb_AC_DODGE_SUM_s.text + $tb_AC_OTHER_SUM.text + $cmb_AC_armor_base.SelectedIndex + $cmb_AC_shield_base.SelectedIndex
+
+	$tb_AC_SUM_BASE_EQUIP.text = 10 + $tb_AC_ARMOR_BASE.text + $tb_AC_SHIELD_BASE.text + $tb_AC_NATURAL_BASE.text + $tb_AC_DEFLECT_BASE.text + $tb_AC_DODGE_BASE.text + $cmb_AC_shield_base.SelectedIndex + $cmb_AC_armor_base.SelectedIndex
+	$tb_AC_SUM_BASE_EQUIP_DODGE.text = 10 + $tb_AC_ARMOR_BASE.text + $tb_AC_SHIELD_BASE.text + $tb_AC_NATURAL_BASE.text + $tb_AC_DEFLECT_BASE.text + $tb_AC_DODGE_SUM_BASE.text + $cmb_AC_shield_base.SelectedIndex + $cmb_AC_armor_base.SelectedIndex
+
+	$tb_AC_SUM_FF_difference.text = [int]$tb_AC_SUM_BASE.text - [int]$tb_AC_SUM_FF.text
+	######texts string
+	$__STRING_DODGE = $null
+	$__STRING_OTHER = $null
+	$__STRING_SIZE = $null
+
+	if($chb_EMA.ischecked){$__STRING_DODGE += " ЭМА 5;"}
+	if($chb_DSH.isChecked){$__STRING_DODGE += " ДШ $($tb_modCHA.text);"}
+	if($chb_DS.isChecked){$__STRING_DODGE += " ДС 4;"}
+	if($chb_MA.isChecked){$__STRING_DODGE += " МА 1;"}
+	if($chb_AC_HASTE.isChecked){$__STRING_DODGE += " ХАСТ 4;"}
+	if([int]$tb_AC_BARDSONG.text -ge 1){$__STRING_DODGE += " ПЕСНЯ $($tb_AC_BARDSONG_MOD.text);"}
+	if([int]$tb_AC_SHADOWEVADE.text -ge 1){$__STRING_DODGE += " ШАДОВ ИВЕЙД $($tb_AC_SHADOWEVADE_MOD.text);"}
+
+	if([int]$tb_AC_MONK.text -ge 4){$__STRING_OTHER += " МОНК $($tb_AC_MONK_MOD.text) БОНУС ВИЗДЫ $($tb_modWIS.text);"}
+	if([int]$tb_AC_RDD.text -ge 1){$__STRING_OTHER += " РДД $($tb_AC_RDD_MOD.text);"}
+	if([int]$tb_AC_PM.text -ge 1){$__STRING_OTHER += " ПМ $($tb_AC_PM_MOD.text);"}
+	if($chb_AC_AS.IsChecked){$__STRING_OTHER += " АрморСкин 2;"}
+	if($chb_AC_EXP.IsChecked){$__STRING_OTHER += " Экспертиза 5;"}
+	if($chb_AC_iEXP.IsChecked){$__STRING_OTHER += " иЭкспертиза 10;"}
+	if([int]$tb_AC_thumble.text -ge 1){$__STRING_OTHER += " Кувырок $($tb_AC_thumble_MOD.text);"}
+
+	if($chb_AC_SIZEBONUS.IsChecked){$__STRING_OTHER += " Размер 1;"}
+
+	$tb_AC_string.text = "Мой АЦ $($tb_AC_SUM_BASE.text). Из которых БАЗА 10; АРМОР $($cmb_AC_armor_base.SelectedIndex)+$($tb_AC_ARMOR_BASE.text); ЩИТ $($cmb_AC_shield_base.SelectedIndex)+$($tb_AC_SHIELD_BASE.text); АМУЛЕТ $($tb_AC_NATURAL_BASE.text); ДЕФЛЕКТ $($tb_AC_DEFLECT_BASE.text); БОТИНКИ $($tb_AC_DODGE_BASE.text);$__STRING_DODGE; БОНУС ДЕКСЫ $($global:__maxDEXMOD);$__STRING_OTHER;$__STRING_SIZE"
+}	
+
+$tb_lvlSum.Add_TextChanged({
+	if([int]$tb_lvlSum.text -lt 20) {$tb_lvlSum.Background="Yellow"}
+	elseif([int]$tb_lvlSum.text -eq 20) {$tb_lvlSum.Background="Green"}
+	elseif([int]$tb_lvlSum.text -gt 20) {$tb_lvlSum.Background="Red"}
+})
+
+#$chb_gnomeAB.Add_click({ checkbox_calculation })
+$chb_halfelfAB.Add_click({ 
+	if($chb_halfelfAB.IsChecked)	{$chb_SagraHalfElf.IsChecked = $false}
+	#checkbox_calculation 
+})
+$chb_SagraHalfElf.Add_click({ 
+	if($chb_SagraHalfElf.IsChecked)	{$chb_halfelfAB.IsChecked = $false}
+	#checkbox_calculation
+})
+$chb_finesse.Add_click({
+	if($chb_finesse.IsChecked)	{$chb_zen.IsChecked = $false}
+	#checkbox_calculation
+})
+$chb_zen.Add_click({ 
+	if($chb_zen.IsChecked)	{$chb_finesse.IsChecked = $false}
+	#checkbox_calculation 
+})
+
+$tb_free20cap.Add_TextChanged({
+	if([int]$tb_free20cap.text -in 1..19) {$tb_free20cap.Background="Yellow";$tb_abBuff.Background="Yellow"}
+	elseif([int]$tb_free20cap.text -eq 20) {$tb_free20cap.Background="Green";$tb_abBuff.Background="Green"}
+	elseif([int]$tb_free20cap.text -lt 1) {$tb_free20cap.Background="Red";$tb_abBuff.Background="Red"}
+})
+
+foreach($__item in $main.children)
+{
+	if($__item.IsEnabled)
+	{
+		if($__item.gettype().name -eq "TextBox")
+		{
+			$__item.Add_TextChanged({ checkbox_calculation })
+		}
+		if($__item.gettype().name -eq "CheckBox")
+		{
+			$__item.Add_click({ checkbox_calculation })
+		}
+		if($__item.gettype().name -eq "ComboBox")
+		{
+			$__item.add_SelectionChanged({ checkbox_calculation })
+		}
+		<#if($__item.gettype().name -eq "Slider")
+		{
+			$__item.add_valuechanged({ checkbox_calculation })
+		}#>
+	}
+}
+
+$xamGUI.ShowDialog() | Out-Null
